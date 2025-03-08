@@ -1,0 +1,5 @@
+openai
+gitpython
+python-dotenv
+transformers
+torch
