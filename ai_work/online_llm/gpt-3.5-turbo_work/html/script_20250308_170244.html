@@ -1,12 +1,14 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Automation Tools Generator</title>
 </head>
+
 <body>
     <h1>Random Automation Tools Generator</h1>
 
@@ -43,6 +45,12 @@
             automationTools.forEach(tool => {
                 const li = document.createElement("li");
                 li.innerText = tool;
+                const removeButton = document.createElement("button");
+                removeButton.innerText = "Remove";
+                removeButton.onclick = function () {
+                    removeTool(tool);
+                };
+                li.appendChild(removeButton);
                 toolList.appendChild(li);
             });
         }
@@ -53,10 +61,10 @@
         function generateTool() {
             // Get a random index from the automationTools array
             const randomIndex = Math.floor(Math.random() * automationTools.length);
-            
+
             // Get the random automation tool at the random index
             const randomTool = automationTools[randomIndex];
-            
+
             // Display the random automation tool in the toolOutput paragraph
             document.getElementById("toolOutput").innerText = `Random Automation Tool: ${randomTool}`;
         }
@@ -66,7 +74,7 @@
          */
         function addCustomTool() {
             const customToolInput = document.getElementById("customToolInput").value;
-            
+
             // Check if input is not empty
             if (customToolInput.trim() !== "") {
                 automationTools.push(customToolInput);
@@ -94,5 +102,6 @@
         }
     </script>
 </body>
+
 </html>
 ```
