@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Automation Tools Generator</title>
+</head>
+<body>
+<h1>Random Automation Tools Generator</h1>
+
+<script>
+    // Function to generate a random number within a specific range
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to generate a random automation tool
+    function generateAutomationTool() {
+        const tools = [
+            "Automated test script generator",
+            "Automated data extraction tool",
+            "Automated report generation tool",
+            "Automated email responder",
+            "Automated task scheduler",
+            "Automated file backup tool",
+            "Automated website monitoring tool"
+        ];
+
+        const randomIndex = getRandomNumber(0, tools.length - 1);
+        return tools[randomIndex];
+    }
+
+    // Generate a random automation tool
+    const randomAutomationTool = generateAutomationTool();
+
+    // Display the generated automation tool
+    document.write(`<p>Random Automation Tool: ${randomAutomationTool}</p>`);
+</script>
+
+</body>
+</html>
+```
+
+Output:
+Random Automation Tools Generator
+
+Random Automation Tool: Automated test script generator

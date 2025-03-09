@@ -1,3 +1,4 @@
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,6 +18,11 @@ char* generateRandomString(int length) {
     return randomString;
 }
 
+// Function to generate a random boolean value (true or false)
+int generateRandomBoolean() {
+    return rand() % 2; // 0 for false, 1 for true
+}
+
 int main() {
     srand(time(NULL)); // Seed for random number generation
 
@@ -28,10 +34,18 @@ int main() {
     int minorVersion = generateRandomNumber(0, 99);
     int patchVersion = generateRandomNumber(0, 99);
 
-    // Display the generated automation tool details
+    // Generate a random boolean value for availability
+    int isAvailable = generateRandomBoolean();
+
+    // Display the generated automation tool details with availability
     printf("Generated Automation Tool:\n");
     printf("Name: %s\n", toolName);
     printf("Version: %d.%d.%d\n", majorVersion, minorVersion, patchVersion);
+    if (isAvailable) {
+        printf("Availability: Available\n");
+    } else {
+        printf("Availability: Not Available\n");
+    }
 
     // Free the dynamically allocated memory for the random string
     free(toolName);
@@ -44,4 +58,6 @@ Output:
 Generated Automation Tool:
 Name: jvzlwqet
 Version: 4.23.75
+Availability: Available
 */
+```

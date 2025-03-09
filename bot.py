@@ -18,6 +18,10 @@ if not OPENAI_API_KEY:
 # Load configuration file
 CONFIG_FILE = Path(__file__).parent / "bot_config.json"
 
+with open("C:\\Users\\young\\task_scheduler_test.log", "a") as f:
+    f.write(f"Task Scheduler ran the bot at {datetime.now()}\n")
+
+
 def load_config():
     """Load bot configuration from JSON file."""
     if CONFIG_FILE.exists():

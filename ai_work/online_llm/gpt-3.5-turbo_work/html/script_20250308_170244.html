@@ -77,6 +77,21 @@
                 alert("Please enter a valid tool name.");
             }
         }
+
+        /**
+         * Function to remove a specific tool from the list
+         * @param {string} toolName - The name of the tool to remove
+         */
+        function removeTool(toolName) {
+            const index = automationTools.indexOf(toolName);
+            if (index !== -1) {
+                automationTools.splice(index, 1);
+                displayTools();
+                alert(`Tool "${toolName}" removed successfully.`);
+            } else {
+                alert(`Tool "${toolName}" not found.`);
+            }
+        }
     </script>
 </body>
 </html>

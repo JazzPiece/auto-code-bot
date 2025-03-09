@@ -10,6 +10,17 @@ public class AutomationToolGenerator {
         int index = random.nextInt(tools.length);
         return tools[index];
     }
+    
+    // Function to check if a specific tool is available
+    public static boolean isToolAvailable(String tool) {
+        String[] tools = {"Selenium WebDriver", "Jenkins", "Appium", "Postman", "JIRA"};
+        for (String availableTool : tools) {
+            if (availableTool.equalsIgnoreCase(tool)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         // Generating 5 random automation tools
@@ -17,15 +28,14 @@ public class AutomationToolGenerator {
             String tool = generateAutomationTool();
             System.out.println("Automation Tool " + i + ": " + tool);
         }
+        
+        // Checking if a specific tool is available
+        String toolToCheck = "Selenium WebDriver";
+        if(isToolAvailable(toolToCheck)) {
+            System.out.println(toolToCheck + " is available.");
+        } else {
+            System.out.println(toolToCheck + " is not available.");
+        }
     }
 }
-```
-
-Output:
-```
-Automation Tool 1: Jenkins
-Automation Tool 2: Postman
-Automation Tool 3: Selenium WebDriver
-Automation Tool 4: JIRA
-Automation Tool 5: Appium
 ```
