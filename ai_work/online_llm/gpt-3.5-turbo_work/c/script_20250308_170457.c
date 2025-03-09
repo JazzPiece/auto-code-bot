@@ -68,10 +68,32 @@ void generateRandomUsername() {
     printf("Random Username: %s\n", username);
 }
 
+// Function to generate a random phone number
+void generateRandomPhoneNumber() {
+    char phone[12]; // For a phone number with country code
+    const char countryCode[] = "+123";
+    const char phoneNumber[] = "4567890123";
+    
+    srand(time(NULL));
+    
+    for (int i = 0; i < 4; i++) {
+        phone[i] = countryCode[i];
+    }
+    
+    for (int i = 4; i < 12; i++) {
+        phone[i] = phoneNumber[generateRandomNumber(0, sizeof(phoneNumber) - 1)];
+    }
+    
+    phone[12] = '\0';
+    
+    printf("Random Phone Number: %s\n", phone);
+}
+
 int main() {
     generateRandomPassword(12); // Generate a random password of length 12
     generateRandomEmail(); // Generate a random email address
     generateRandomUsername(); // Generate a random username
+    generateRandomPhoneNumber(); // Generate a random phone number
     
     return 0;
 }

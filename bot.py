@@ -77,17 +77,13 @@ def fetch_automation_idea():
         log(f"⚠️ Error fetching automation idea: {e}")
     return "Create a script that generates random useful automation tools."
 
-# ✅ Loop through each language and create a limited number of new files
+# ✅ Always create new files up to the limit
 for lang in languages:
     ext = lang.strip().lower()
     lang_dir = AI_WORK_DIR / ext.lstrip(".")
     lang_dir.mkdir(parents=True, exist_ok=True)
 
-    # Ensure new files are created up to the limit
-    existing_files = list(lang_dir.glob(f"*.{ext.lstrip('.')}"))
-    num_new_files_needed = max(0, max_new_files - len(existing_files))
-
-    for _ in range(num_new_files_needed):
+    for _ in range(max_new_files):
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         new_file = lang_dir / f"script_{timestamp}{ext}"
 
@@ -108,7 +104,7 @@ for lang in languages:
         Ensure the script follows best practices for {ext}.
         """
 
-        log(f"📌 Generating a {ext} script: {new_file}")
+        log(f"📌 Generating a new {ext} script: {new_file}")
         ai_generated_code = client.chat.completions.create(
             model=openai_model,
             messages=[{"role": "user", "content": code_prompt}],
@@ -121,12 +117,11 @@ for lang in languages:
         else:
             log(f"⚠️ AI did not return valid {ext} code. Skipping.")
 
-# ✅ Loop through each language and modify a limited number of existing files
+# ✅ Modify existing files up to the limit
 for lang in languages:
     lang_dir = AI_WORK_DIR / lang.lstrip(".")
-    files = list(lang_dir.glob(f"*.{lang.lstrip('.')}"))
+    files = list(lang_dir.glob(f"*.{lang.lstrip('.')}") )
 
-    # Modify only up to the specified number of files
     if len(files) > max_modified_files:
         files = random.sample(files, max_modified_files)
 

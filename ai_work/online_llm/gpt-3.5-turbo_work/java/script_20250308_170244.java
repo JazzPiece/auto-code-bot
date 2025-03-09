@@ -26,24 +26,38 @@ public class AutomationToolGenerator {
     public static String recommendTool(String toolName) {
         String recommendedTool = "";
         String[] validTools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework"};
-        
+
         for (String tool : validTools) {
             if (tool.contains(toolName) || toolName.contains(tool)) {
                 recommendedTool = tool;
                 break;
             }
         }
-        
+
         return recommendedTool;
     }
 
+    // Function to get all available tools
+    public static String getAllTools() {
+        StringBuilder allTools = new StringBuilder();
+        allTools.append("Available automation tools:");
+        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework"};
+        for (int i = 1; i <= tools.length; i++) {
+            allTools.append("\n").append(i).append(". ").append(tools[i - 1]);
+        }
+        return allTools.toString();
+    }
+
     public static void main(String[] args) {
-        System.out.println("Generating random, validating useful automation tools, and recommending similar tools:");
+        System.out.println("Generating random, validating useful automation tools, recommending similar tools, and displaying all available tools:");
+
+        System.out.println("----- All Available Tools -----");
+        System.out.println(getAllTools());
 
         // Generate, validate, and recommend similar tool for 5 random automation tools
         for (int i = 1; i <= 5; i++) {
             String tool = generateTool();
-            System.out.println(i + ". " + tool);
+            System.out.println("\n" + i + ". " + tool);
             // Validate the generated tool
             if (isValidTool(tool)) {
                 System.out.println("   Valid tool!");
@@ -58,4 +72,5 @@ public class AutomationToolGenerator {
         }
     }
 }
+```
 ```

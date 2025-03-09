@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Automation Tool Generator</title>
+</head>
+<body>
+    <h1>Random Automation Tool Generator</h1>
+
+    <p id="output"></p>
+
+    <script>
+        // Function to generate a random automation tool
+        function generateAutomationTool() {
+            const tools = [
+                "Automated Testing Tool",
+                "Data Scraping Tool",
+                "Task Scheduler",
+                "Automated Report Generator",
+                "Auto-Fill Form Tool",
+                "FTP Automation Tool"
+            ];
+
+            // Generate a random index to select a tool from the array
+            const randomIndex = Math.floor(Math.random() * tools.length);
+
+            // Return the randomly selected tool
+            return tools[randomIndex];
+        }
+
+        // Get a random automation tool
+        const randomTool = generateAutomationTool();
+
+        // Display the random automation tool on the web page
+        const outputElement = document.getElementById("output");
+        outputElement.textContent = `Random Automation Tool: ${randomTool}`;
+    </script>
+</body>
+</html>
+```
+
+Output:
+Random Automation Tool: Data Scraping Tool

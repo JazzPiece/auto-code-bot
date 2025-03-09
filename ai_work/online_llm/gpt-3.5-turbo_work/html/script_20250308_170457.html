@@ -65,9 +65,15 @@
                 alert("Tool not found in the list.");
             }
         }
+
+        // Function to display all tools in the list
+        function displayAllTools() {
+            alert("List of Automation Tools:\n" + tools.join("\n"));
+        }
     </script>
     <button onclick="addNewTool()">Add New Tool</button>
     <button onclick="removeTool()">Remove Tool</button>
+    <button onclick="displayAllTools()">Display All Tools</button>
 </body>
 </html>
 ```
