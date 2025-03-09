@@ -26,7 +26,7 @@ void generateRandomPassword(int length) {
 
 // Function to generate a random email address
 void generateRandomEmail() {
-    char email[21]; // Increased size by 1 to accommodate null terminator
+    char email[22]; // Increased size to accommodate null terminator at index 21
     const char name[] = "abcdefghijklmnopqrstuvwxyz0123456789";
     const char domain[] = "gmail.com";
     
@@ -42,18 +42,36 @@ void generateRandomEmail() {
         email[i] = name[generateRandomNumber(0, sizeof(name) - 1)];
     }
     
-    for (int i = 17; i < 21; i++) { // Increased loop to include domain length
+    for (int i = 17; i < 21; i++) {
         email[i] = domain[i - 17];
     }
     
-    email[21] = '\0';
+    email[21] = domain[0]; // Adding the first letter of the domain for variation
+    email[22] = '\0';
     
     printf("Random Email Address: %s\n", email);
+}
+
+// Function to generate a random username
+void generateRandomUsername() {
+    char username[9]; // For a username of length 8
+    const char name[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    
+    srand(time(NULL));
+    
+    for (int i = 0; i < 8; i++) {
+        username[i] = name[generateRandomNumber(0, sizeof(name) - 1)];
+    }
+    
+    username[8] = '\0';
+    
+    printf("Random Username: %s\n", username);
 }
 
 int main() {
     generateRandomPassword(12); // Generate a random password of length 12
     generateRandomEmail(); // Generate a random email address
+    generateRandomUsername(); // Generate a random username
     
     return 0;
 }

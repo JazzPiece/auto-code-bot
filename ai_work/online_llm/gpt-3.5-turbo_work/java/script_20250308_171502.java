@@ -42,6 +42,12 @@ public class AutomationToolGenerator {
         return availableTools.size();
     }
 
+    // Function to add a new tool to the available tools list
+    public static void addTool(String tool) {
+        availableTools.add(tool);
+        System.out.println(tool + " has been added to the list of available tools.");
+    }
+
     public static void main(String[] args) {
         // Initialize available tools
         initializeAvailableTools();
@@ -63,6 +69,13 @@ public class AutomationToolGenerator {
 
         // Getting the total number of available tools
         System.out.println("Total number of available tools: " + getTotalNumberOfTools());
+
+        // Adding a new tool to the available tools list
+        String newTool = "TestNG";
+        addTool(newTool);
+
+        // Displaying all available tools after adding the new tool
+        displayAllTools();
     }
 }
 ```

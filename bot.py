@@ -41,9 +41,9 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Initialize directories
 REPO_DIR = Path(__file__).parent
-AI_WORK_DIR = REPO_DIR / "ai_work" /"online_llm" / f"{openai_model}_work"
+AI_WORK_DIR = REPO_DIR / "ai_work" / "online_llm" / f"{openai_model}_work"
 LOGS_DIR = REPO_DIR / "logs"
-AI_WORK_DIR.mkdir(exist_ok=True)
+AI_WORK_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 
 # Logging function
@@ -83,9 +83,11 @@ for lang in languages:
     lang_dir = AI_WORK_DIR / ext.lstrip(".")
     lang_dir.mkdir(parents=True, exist_ok=True)
 
-    # Limit new files per language
+    # Ensure new files are created up to the limit
     existing_files = list(lang_dir.glob(f"*.{ext.lstrip('.')}"))
-    if len(existing_files) < max_new_files:
+    num_new_files_needed = max(0, max_new_files - len(existing_files))
+
+    for _ in range(num_new_files_needed):
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         new_file = lang_dir / f"script_{timestamp}{ext}"
 

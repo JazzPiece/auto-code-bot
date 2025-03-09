@@ -60,13 +60,6 @@ def list_available_tools():
         print(tool)
 
 if __name__ == "__main__":
+    list_available_tools()
     main()
 ```
-
-**Output:**
-```
-Randomly generated useful automation tool: Automated screenshot taker
-Description of Automated screenshot taker: Tool that captures screenshots automatically at specified intervals.
-``` 
-
-In the improved script, a new function `list_available_tools` has been added to showcase all the available useful automation tools. This extra feature allows users to see the complete list of tools they can generate and learn more about.

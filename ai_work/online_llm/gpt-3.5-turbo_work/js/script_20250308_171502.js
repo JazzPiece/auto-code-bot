@@ -64,6 +64,19 @@ function getToolCategory(tool) {
     return categories[tool] || "Uncategorized";
 }
 
+/**
+ * Function to recommend a similar tool in the same category 
+ * @param {string} tool - The tool name to find a similar tool for
+ * @returns {string} A recommended tool in the same category
+ */
+function recommendSimilarTool(tool) {
+    const toolCategory = getToolCategory(tool);
+    const categoryTools = Object.keys(categories).filter(category => categories[category] === toolCategory && category !== tool);
+    
+    const randomIndex = Math.floor(Math.random() * categoryTools.length);
+    return categoryTools[randomIndex];
+}
+
 // Generate and print a random automation tool
 const randomAutomationTool = generateRandomAutomationTool();
 console.log("Random Automation Tool: " + randomAutomationTool);
@@ -78,4 +91,8 @@ if (isTestingTool(randomAutomationTool)) {
 // Get and print the category of the random automation tool
 const toolCategory = getToolCategory(randomAutomationTool);
 console.log("Category: " + toolCategory);
+
+// Recommend a similar tool in the same category
+const similarTool = recommendSimilarTool(randomAutomationTool);
+console.log("Recommended Tool in the same category: " + similarTool);
 ```
