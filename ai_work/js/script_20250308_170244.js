@@ -45,6 +45,25 @@ function checkIfToolIncluded(tool) {
     return automationTools.includes(tool);
 }
 
+/**
+ * Function to get all automation tools in the list
+ * @returns {Array} List of automation tools
+ */
+function getAllAutomationTools() {
+    return [
+        "Selenium WebDriver",
+        "Appium",
+        "Katalon Studio",
+        "Cypress",
+        "Postman",
+        "Jenkins",
+        "Robot Framework",
+        "TestProject",
+        "SoapUI",
+        "XCUITest"
+    ];
+}
+
 // Generate a random automation tool
 const randomAutomationTool = generateRandomAutomationTool();
 
@@ -57,15 +76,11 @@ const isToolIncluded = checkIfToolIncluded(toolToCheck);
 
 // Output the result of checking if the tool is included
 console.log(`Is ${toolToCheck} included in the list? ${isToolIncluded}`);
-```
 
-Output:
-```
-Random Automation Tool: Jenkins
-Is Selenium WebDriver included in the list? true
-```
+// Get all automation tools in the list
+const allTools = getAllAutomationTools();
 
-Improvements Made:
-1. Added a new function `checkIfToolIncluded` that checks if a given automation tool is included in the list.
-2. Utilized the new function to check if "Selenium WebDriver" is included in the list and displayed the result.
-3. Ensured proper comments for the new function and its usage.
+// Output all automation tools
+console.log("All Automation Tools:");
+allTools.forEach(tool => console.log(tool));
+```

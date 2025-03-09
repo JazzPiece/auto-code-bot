@@ -26,6 +26,16 @@ public class AutomationToolGenerator {
         return false;
     }
 
+    // Function to display all available tools
+    public static void displayAllTools() {
+        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
+        
+        System.out.println("Available Automation Tools:");
+        for(String tool : tools) {
+            System.out.println(tool);
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Generating Random Automation Tool:");
         String automationTool = generateAutomationTool();
@@ -38,6 +48,9 @@ public class AutomationToolGenerator {
         } else {
             System.out.println(toolToCheck + " is not available.");
         }
+
+        // Displaying all available tools
+        displayAllTools();
     }
 }
 ```

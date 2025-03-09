@@ -26,7 +26,7 @@ void generateRandomPassword(int length) {
 
 // Function to generate a random email address
 void generateRandomEmail() {
-    char email[20];
+    char email[21]; // Increased size by 1 to accommodate null terminator
     const char name[] = "abcdefghijklmnopqrstuvwxyz0123456789";
     const char domain[] = "gmail.com";
     
@@ -42,30 +42,19 @@ void generateRandomEmail() {
         email[i] = name[generateRandomNumber(0, sizeof(name) - 1)];
     }
     
-    for (int i = 17; i < 20; i++) {
+    for (int i = 17; i < 21; i++) { // Increased loop to include domain length
         email[i] = domain[i - 17];
     }
     
-    email[20] = '\0';
+    email[21] = '\0';
     
     printf("Random Email Address: %s\n", email);
 }
 
 int main() {
-    generateRandomPassword(12);
-    generateRandomEmail();
+    generateRandomPassword(12); // Generate a random password of length 12
+    generateRandomEmail(); // Generate a random email address
     
     return 0;
 }
-``` 
-
-**Output:**
 ```
-Random Password: T4^vad!p3iXr
-Random Email Address: e4y7vFj2@gmail.com
-``` 
-
-**Improvements:**
-1. Added the functionality to generate a random password of variable length by passing the desired length as an argument.
-2. Updated the main function to generate a random password with a length of 12 characters.
-3. Properly commented the code for better readability and understanding.

@@ -15,17 +15,18 @@
     <p id="toolOutput"></p>
 
     <script>
+        // Array of existing automation tools
+        const tools = [
+            "Automated Testing Tool",
+            "Data Scraping Tool",
+            "Batch File Processor",
+            "Automated Email Sender",
+            "Social Media Scheduler",
+            "Automated Report Generator"
+        ];
+
         // Function to generate a random automation tool
         function generateTool() {
-            const tools = [
-                "Automated Testing Tool",
-                "Data Scraping Tool",
-                "Batch File Processor",
-                "Automated Email Sender",
-                "Social Media Scheduler",
-                "Automated Report Generator"
-            ];
-
             // Generate a random index to select a tool from the array
             const randomIndex = Math.floor(Math.random() * tools.length);
 
@@ -51,6 +52,4 @@
     <button onclick="addNewTool()">Add New Tool</button>
 </body>
 </html>
-``` 
-
-In the improved script, a new function `addNewTool()` is added, allowing users to input a new automation tool and append it to the existing list. This new functionality enhances the user experience by giving them the option to contribute to the list of automation tools. Users can now click the "Add New Tool" button to input a new tool name, which will then be added to the list.
+```
