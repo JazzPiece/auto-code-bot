@@ -48,6 +48,27 @@ void displayAutomationToolOptions() {
     }
 }
 
+// Function to recommend a random automation tool based on user input
+void recommendAutomationTool(int choice) {
+    char* tools[] = {
+        "Automated Testing Framework",
+        "CI/CD Pipeline Automation Tool",
+        "Configuration Management Tool",
+        "Monitoring and Alerting Tool",
+        "Infrastructure as Code Tool",
+        "Deployment Automation Tool",
+        "Security Compliance Automation Tool"
+    };
+
+    int numTools = sizeof(tools) / sizeof(tools[0]);
+
+    if (choice > 0 && choice <= numTools) {
+        printf("Recommended Automation Tool: %s\n", tools[choice - 1]);
+    } else {
+        printf("Invalid choice. Please select a valid tool.");
+    }
+}
+
 int main() {
     // Seed the random number generator
     srand(time(NULL));
@@ -57,6 +78,14 @@ int main() {
 
     // Generate a random automation tool
     generateAutomationTool();
+
+    // User input to choose a tool for recommendation
+    int choice;
+    printf("Enter the number of the tool you want a recommendation for: ");
+    scanf("%d", &choice);
+
+    // Recommend a tool based on user input
+    recommendAutomationTool(choice);
 
     return 0;
 }
@@ -72,4 +101,7 @@ int main() {
 // 7. Security Compliance Automation Tool
 //
 // Random Automation Tool: CI/CD Pipeline Automation Tool
+// Enter the number of the tool you want a recommendation for: 3
+// Recommended Automation Tool: Configuration Management Tool
 ```
+In the improved script, a new function `recommendAutomationTool` is added to recommend an automation tool based on user input. The user can now input a number corresponding to the automation tool they want a recommendation for. This enhances the functionality of the script by providing a personalized recommendation based on user choice.

@@ -1,9 +1,32 @@
 ```javascript
+// Class for a specific category of automation tools
+class AutomationCategory {
+    constructor(name, tools) {
+        this.name = name;
+        this.tools = tools;
+    }
+
+    // Function to check if a tool belongs to this category
+    isToolInCategory(tool) {
+        return this.tools.includes(tool);
+    }
+}
+
 // Function to generate a random automation tool
 function generateAutomationTool() {
-    const tools = ["Automated Testing Framework", "Task Scheduler", "Data Scraper", "Automated Email Sender", "File Backup System"];
-    const randomIndex = Math.floor(Math.random() * tools.length);
-    return tools[randomIndex];
+    const toolCategories = [
+        new AutomationCategory("Testing Tools", ["Automated Testing Framework"]),
+        new AutomationCategory("Scheduling Tools", ["Task Scheduler"]),
+        new AutomationCategory("Data Tools", ["Data Scraper"]),
+        new AutomationCategory("Email Tools", ["Automated Email Sender"]),
+        new AutomationCategory("Backup Tools", ["File Backup System"])
+    ];
+
+    const randomCategoryIndex = Math.floor(Math.random() * toolCategories.length);
+    const selectedCategory = toolCategories[randomCategoryIndex];
+
+    const randomToolIndex = Math.floor(Math.random() * selectedCategory.tools.length);
+    return selectedCategory.tools[randomToolIndex];
 }
 
 // Function to check if a tool is commonly used
@@ -18,6 +41,12 @@ function generateRandomAutomationTool() {
     console.log("Random Automation Tool Generated:");
     console.log(automationTool);
 
+    const toolCategory = toolCategories.find(category => category.isToolInCategory(automationTool));
+
+    if(toolCategory) {
+        console.log(`This tool belongs to the category: ${toolCategory.name}`);
+    }
+
     if(isCommonTool(automationTool)) {
         console.log("This tool is commonly used.");
     } else {
@@ -27,11 +56,4 @@ function generateRandomAutomationTool() {
 
 // Call the main function to generate a random automation tool
 generateRandomAutomationTool();
-```
-
-Output:
-```
-Random Automation Tool Generated:
-Automated Email Sender
-This tool is commonly used.
 ```

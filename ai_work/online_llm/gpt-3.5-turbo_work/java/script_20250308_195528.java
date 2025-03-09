@@ -27,23 +27,23 @@ public class AutomationToolGenerator {
         return toolDescriptions[index];
     }
 
+    // Function to generate a random tool rating
+    public static int generateToolRating() {
+        Random rand = new Random();
+        return rand.nextInt(5) + 1; // Generate a rating between 1 and 5
+    }
+
     public static void main(String[] args) {
         String toolName = generateToolName();
         String toolCategory = generateToolCategory();
         String toolDescription = generateToolDescription();
+        int toolRating = generateToolRating();
 
         System.out.println("=== Random Automation Tool Generator ===");
         System.out.println("Tool Name: " + toolName);
         System.out.println("Tool Category: " + toolCategory);
         System.out.println("Tool Description: " + toolDescription);
+        System.out.println("Tool Rating: " + toolRating + " stars");
     }
 }
-```
-
-Output:
-```
-=== Random Automation Tool Generator ===
-Tool Name: AutoTester
-Tool Category: Testing
-Tool Description: Automate repetitive tasks easily
 ```

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,20 @@
 			const toolOutput = document.getElementById("toolOutput");
 			toolOutput.textContent = "Random Automation Tool: " + tool;
 		}
+
+		// Function to add the generated tool to a list of used tools
+		function addToUsedTools(tool) {
+			const usedToolsList = document.getElementById("usedToolsList");
+			const listItem = document.createElement("li");
+			listItem.textContent = tool;
+			usedToolsList.appendChild(listItem);
+		}
 	</script>
+	<hr>
+	<h2>Used Tools:</h2>
+	<ul id="usedToolsList"></ul>
 </body>
 </html>
+``` 
+
+In the above improved script, an additional function `addToUsedTools` has been added that allows the generated tool to be added to a list of used tools displayed on the webpage. When a tool is generated, it will also be added to the list below the generate button.
