@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,18 +32,31 @@
         return tools[randomIndex];
     }
 
+    // Function to display the generation result in a stylized way
+    function displayAutomationTool(tool) {
+        const toolDescription = {
+            "Automated test script generator": "Generates test scripts automatically.",
+            "Automated data extraction tool": "Extracts data from various sources with automation.",
+            "Automated report generation tool": "Generates reports automatically based on pre-defined templates.",
+            "Automated email responder": "Sends automated responses to received emails.",
+            "Automated task scheduler": "Schedules tasks and executes them automatically.",
+            "Automated file backup tool": "Automatically backs up files at specified intervals.",
+            "Automated website monitoring tool": "Monitors website uptime and performance automatically."
+        };
+
+        document.write(`<p>Random Automation Tool: ${tool}</p>`);
+        document.write(`<p>Description: ${toolDescription[tool]}</p>`);
+    }
+
     // Generate a random automation tool
     const randomAutomationTool = generateAutomationTool();
 
-    // Display the generated automation tool
-    document.write(`<p>Random Automation Tool: ${randomAutomationTool}</p>`);
+    // Display the generated automation tool with description
+    displayAutomationTool(randomAutomationTool);
 </script>
 
 </body>
 </html>
 ```
 
-Output:
-Random Automation Tools Generator
-
-Random Automation Tool: Automated test script generator
+In the improved script, a new function `displayAutomationTool` is added to provide a description of the generated automation tool. The description is displayed alongside the tool name to give more context to the generated tool. This helps the user understand the purpose of the automation tool and its functionality.

@@ -86,6 +86,28 @@ function recommendSimilarTool(tool) {
     return categoryTools[randomIndex];
 }
 
+/**
+ * Function to get the description of a given tool
+ * @param {string} tool - The tool name to get description for
+ * @returns {string} The description of the tool
+ */
+function getToolDescription(tool) {
+    const descriptions = {
+        "Automated Testing Framework": "A framework used for automated testing of software applications.",
+        "Task Scheduler": "A tool that schedules and automates tasks to run at specific times.",
+        "Data Scraping Bot": "A bot that extracts data from websites and stores it for analysis.",
+        "Web Page Screenshot Generator": "Generates screenshots of web pages for visual comparison.",
+        "Automated Email Sender": "Automates the process of sending emails to a list of recipients.",
+        "Code Deployment Tool": "Facilitates the automated deployment of code to servers or cloud platforms.",
+        "Network Monitoring Tool": "Monitors network activities and alerts for any abnormalities or failures.",
+        "Automated Backup System": "Automatically backs up data at regular intervals to ensure data integrity.",
+        "File Compression Utility": "Compresses files to reduce storage space and facilitate easier sharing.",
+        "Auto-Responder Chatbot": "A chatbot that automatically responds to user queries based on predefined rules."
+    };
+
+    return descriptions[tool] || "No description available.";
+}
+
 // Generate and print a random automation tool
 const randomAutomationTool = generateRandomAutomationTool();
 console.log("Random Automation Tool: " + randomAutomationTool);
@@ -101,8 +123,11 @@ if (isTestingTool(randomAutomationTool)) {
 const toolCategory = getToolCategory(randomAutomationTool);
 console.log("Category: " + toolCategory);
 
+// Get and print the description of the random automation tool
+const toolDescription = getToolDescription(randomAutomationTool);
+console.log("Description: " + toolDescription);
+
 // Recommend a similar tool in the same category
 const similarTool = recommendSimilarTool(randomAutomationTool);
 console.log("Recommended Tool in the same category: " + similarTool);
-```
 ```

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Useful Automation Tools Generator</title>
+</head>
+<body>
+    <h1>Random Useful Automation Tools Generator</h1>
+
+    <p>Click the button below to generate a random useful automation tool:</p>
+
+    <button onclick="generateTool()">Generate Tool</button>
+
+    <p id="toolDisplay"></p>
+
+    <script>
+        // Function to generate a random tool
+        function generateTool() {
+            // List of useful automation tools
+            const tools = [
+                "Automated data backup tool",
+                "Automated email scheduler",
+                "Automated report generator",
+                "Automated file synchronization tool",
+                "Automated website deployment tool"
+            ];
+
+            // Generate a random index to select a tool from the list
+            const randomIndex = Math.floor(Math.random() * tools.length);
+
+            // Display the randomly generated tool
+            document.getElementById("toolDisplay").innerText = "Random Useful Automation Tool: " + tools[randomIndex];
+        }
+    </script>
+</body>
+</html>

@@ -11,6 +11,17 @@ public class AutomationToolGenerator {
         return tools[index];
     }
 
+    // Function to check if a specific tool is available
+    public static boolean isToolAvailable(String toolName) {
+        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Katalon Studio"};
+        for (String tool : tools) {
+            if (tool.equalsIgnoreCase(toolName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("Generating random automation tools:");
 
@@ -19,16 +30,18 @@ public class AutomationToolGenerator {
             String tool = generateAutomationTool();
             System.out.println("Tool " + i + ": " + tool);
         }
+
+        // Check if a specific tool is available
+        String toolToCheck = "Selenium";
+        if(isToolAvailable(toolToCheck)) {
+            System.out.println(toolToCheck + " is available.");
+        } else {
+            System.out.println(toolToCheck + " is not available.");
+        }
     }
 }
-```
+``` 
 
-Output:
-```
-Generating random automation tools:
-Tool 1: Jenkins
-Tool 2: Selenium
-Tool 3: Katalon Studio
-Tool 4: Robot Framework
-Tool 5: Postman
-```
+Improved script:
+- Added a new function `isToolAvailable(String toolName)` that checks if a specific tool is available in the list of tools.
+- In the main method, after generating random automation tools, it checks if "Selenium" tool is available using the new function `isToolAvailable()`.

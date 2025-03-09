@@ -8,6 +8,26 @@ import random
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
+import getpass
+import sys
+# Logging function
+# Define repo directory first
+REPO_DIR = Path(__file__).parent
+LOGS_DIR = REPO_DIR / "logs"
+LOGS_DIR.mkdir(exist_ok=True)
+log_filename = LOGS_DIR / f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+
+def log(message):
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log_entry = f"[{timestamp}] {message}"
+    print(log_entry)
+    with open(log_filename, "a", encoding="utf-8") as log_file:
+        log_file.write(log_entry + "\n")
+log(f" Running as user: {getpass.getuser()}")
+log(f" Current working directory: {os.getcwd()}")
+log(f" Python executable: {sys.executable}")
+log(f" Repo path: {REPO_DIR}")
+
 
 # Load API Key from .env file
 load_dotenv()
