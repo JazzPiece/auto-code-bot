@@ -48,15 +48,20 @@
         document.write(`<p>Description: ${toolDescription[tool]}</p>`);
     }
 
+    // Function to display the generation result with a user-provided message
+    function displayAutomationToolWithMessage(tool, message) {
+        displayAutomationTool(tool);
+        document.write(`<p>User Message: ${message}</p>`);
+    }
+
     // Generate a random automation tool
     const randomAutomationTool = generateAutomationTool();
 
-    // Display the generated automation tool with description
-    displayAutomationTool(randomAutomationTool);
+    // Display the generated automation tool with description and user message
+    displayAutomationToolWithMessage(randomAutomationTool, "This tool is great for automating tasks!");
+
 </script>
 
 </body>
 </html>
 ```
-
-In the improved script, a new function `displayAutomationTool` is added to provide a description of the generated automation tool. The description is displayed alongside the tool name to give more context to the generated tool. This helps the user understand the purpose of the automation tool and its functionality.

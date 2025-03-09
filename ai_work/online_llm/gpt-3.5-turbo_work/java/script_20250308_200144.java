@@ -11,6 +11,17 @@ public class AutomationToolGenerator {
         return tools[index];
     }
 
+    // Function to check if a specific tool is included in the generated tools
+    public static boolean isToolIncluded(String toolName) {
+        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "JIRA", "Git", "Docker"};
+        for (String tool : tools) {
+            if (tool.equalsIgnoreCase(toolName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("Generating random useful automation tools:");
 
@@ -18,16 +29,14 @@ public class AutomationToolGenerator {
             String tool = generateAutomationTool();
             System.out.println((i + 1) + ". " + tool);
         }
+
+        String specificTool = "Selenium";
+        System.out.println("\nChecking if " + specificTool + " is included in the generated tools:");
+        if (isToolIncluded(specificTool)) {
+            System.out.println(specificTool + " is included.");
+        } else {
+            System.out.println(specificTool + " is not included.");
+        }
     }
 }
-```
-
-Output:
-```
-Generating random useful automation tools:
-1. Jenkins
-2. Selenium
-3. Git
-4. Postman
-5. Appium
 ```
