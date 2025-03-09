@@ -1,0 +1,4 @@
+{
+  "engine": "ollama",
+  "model": "Llama2-7B"
+}

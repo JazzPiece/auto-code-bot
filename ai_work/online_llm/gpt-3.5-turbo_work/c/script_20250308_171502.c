@@ -36,6 +36,30 @@ void displayAvailableToolsWithDescriptions() {
     printf("5. Scripting Language Tool - Used for automating tasks through scripts.\n");
 }
 
+// Function to provide additional information for a specific automation tool
+void getToolInformation(int toolIndex) {
+    switch(toolIndex) {
+        case 1:
+            printf("\nAutomated Testing Tool Info: This tool helps in automating the testing process of software applications.");
+            break;
+        case 2:
+            printf("\nCI/CD Pipeline Tool Info: This tool automates the building, testing, and deployment of code changes.");
+            break;
+        case 3:
+            printf("\nInfrastructure as Code Tool Info: This tool manages infrastructure components through code-based configurations.");
+            break;
+        case 4:
+            printf("\nLogging and Monitoring Tool Info: This tool monitors and logs events to ensure smooth application performance.");
+            break;
+        case 5:
+            printf("\nScripting Language Tool Info: This tool is used to automate manual tasks using scripts.");
+            break;
+        default:
+            printf("\nInformation not available for this tool.");
+            break;
+    }
+}
+
 int main() {
     // Seed the random number generator
     srand(time(0));
@@ -47,6 +71,16 @@ int main() {
     do {
         displayAvailableToolsWithDescriptions();
         generateAutomationTool();
+
+        printf("\nDo you want to get more information about a specific tool? (y/n): ");
+        scanf(" %c", &userInput);
+
+        if(userInput == 'y' || userInput == 'Y') {
+            int toolChoice;
+            printf("\nEnter the number of the tool you want more information about: ");
+            scanf("%d", &toolChoice);
+            getToolInformation(toolChoice);
+        }
 
         printf("\nDo you want to generate another random automation tool? (y/n): ");
         scanf(" %c", &userInput);

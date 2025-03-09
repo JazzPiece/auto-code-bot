@@ -64,6 +64,15 @@ function getAllAutomationTools() {
     ];
 }
 
+/**
+ * Function to add a new automation tool to the list
+ * @param {string} newTool - New automation tool to add
+ */
+function addNewAutomationTool(newTool) {
+    const automationTools = getAllAutomationTools();
+    automationTools.push(newTool);
+}
+
 // Generate a random automation tool
 const randomAutomationTool = generateRandomAutomationTool();
 
@@ -83,4 +92,14 @@ const allTools = getAllAutomationTools();
 // Output all automation tools
 console.log("All Automation Tools:");
 allTools.forEach(tool => console.log(tool));
+
+// Add a new automation tool to the list
+addNewAutomationTool("Protractor");
+
+// Get all automation tools after adding the new tool
+const updatedTools = getAllAutomationTools();
+
+// Output all automation tools including the new one
+console.log("All Automation Tools After Addition:");
+updatedTools.forEach(tool => console.log(tool));
 ```

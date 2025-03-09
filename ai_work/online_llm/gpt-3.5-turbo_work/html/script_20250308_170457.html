@@ -48,8 +48,26 @@
                 alert("No tool added. Please enter a valid tool name.");
             }
         }
+
+        // Function to remove a tool from the list
+        function removeTool() {
+            // Get user input for the tool to be removed
+            const toolToRemove = prompt("Enter the name of the tool to be removed:");
+
+            // Find the index of the tool to remove
+            const indexToRemove = tools.indexOf(toolToRemove);
+
+            // Remove the tool if found
+            if (indexToRemove !== -1) {
+                tools.splice(indexToRemove, 1);
+                alert("Tool removed successfully!");
+            } else {
+                alert("Tool not found in the list.");
+            }
+        }
     </script>
     <button onclick="addNewTool()">Add New Tool</button>
+    <button onclick="removeTool()">Remove Tool</button>
 </body>
 </html>
 ```

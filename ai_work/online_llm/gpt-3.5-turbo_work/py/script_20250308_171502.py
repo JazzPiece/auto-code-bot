@@ -22,6 +22,10 @@ class AutomationToolGenerator:
             generated_tools.append(tool)
         return generated_tools
 
+# Function to check if a tool is a backup tool
+def check_backup(tool):
+    return "backup" in tool.lower()
+
 def main():
     num_tools = 6  # Increased number of tools to generate
     print("Generating {} random automation tools:".format(num_tools))
@@ -32,10 +36,6 @@ def main():
     for i, tool in enumerate(generated_tools):
         print("Tool {}: {}".format(i+1, tool))
 
-# Function to check if a tool is a backup tool
-def check_backup(tool):
-    return "backup" in tool.lower()
-
 if __name__ == "__main__":
     main()
     
@@ -45,24 +45,3 @@ if __name__ == "__main__":
     else:
         print(f"\n{tool_to_check} is not a backup tool.")
 ```
-
-**Output:**
-```
-Generating 6 random automation tools:
-Tool 1: Automated backup tool
-Tool 2: Automated testing tool
-Tool 3: Automated testing tool
-Tool 4: Automated monitoring tool
-Tool 5: Automated deployment tool
-Tool 6: Automated report generation tool
-
-Automated backup tool is a backup tool.
-``` 
-
-**Improvements:**
-1. Introduced a class `AutomationToolGenerator` to handle generation of automation tools.
-2. Added a method `generate_multiple_tools` in the class to generate multiple tools at once.
-3. Modified the main function to use the new class for generating tools.
-4. The script now displays 6 random automation tools instead of 5.
-5. Retained the existing check for backup tool functionality.
-6. Added proper comments for better code readability.

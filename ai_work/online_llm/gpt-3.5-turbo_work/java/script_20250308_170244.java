@@ -22,10 +22,25 @@ public class AutomationToolGenerator {
         return false;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Generating random and validating useful automation tools:");
+    // Function to recommend a similar tool
+    public static String recommendTool(String toolName) {
+        String recommendedTool = "";
+        String[] validTools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework"};
+        
+        for (String tool : validTools) {
+            if (tool.contains(toolName) || toolName.contains(tool)) {
+                recommendedTool = tool;
+                break;
+            }
+        }
+        
+        return recommendedTool;
+    }
 
-        // Generate and validate 5 random automation tools
+    public static void main(String[] args) {
+        System.out.println("Generating random, validating useful automation tools, and recommending similar tools:");
+
+        // Generate, validate, and recommend similar tool for 5 random automation tools
         for (int i = 1; i <= 5; i++) {
             String tool = generateTool();
             System.out.println(i + ". " + tool);
@@ -34,23 +49,13 @@ public class AutomationToolGenerator {
                 System.out.println("   Valid tool!");
             } else {
                 System.out.println("   Invalid tool!");
+                // Recommend a similar tool
+                String recommendedTool = recommendTool(tool);
+                if (!recommendedTool.isEmpty()) {
+                    System.out.println("   Recommended tool: " + recommendedTool);
+                }
             }
         }
     }
 }
-```
-
-Output:
-```
-Generating random and validating useful automation tools:
-1. Jenkins
-   Valid tool!
-2. Selenium
-   Valid tool!
-3. Appium
-   Valid tool!
-4. Postman
-   Valid tool!
-5. Robot Framework
-   Valid tool!
 ```

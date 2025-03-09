@@ -41,7 +41,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Initialize directories
 REPO_DIR = Path(__file__).parent
-AI_WORK_DIR = REPO_DIR / "ai_work"
+AI_WORK_DIR = REPO_DIR / "ai_work" /"online_llm" / f"{openai_model}_work"
 LOGS_DIR = REPO_DIR / "logs"
 AI_WORK_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
