@@ -4,19 +4,19 @@
 #include <time.h>
 #include <string.h>
 
+// Global variables
+char *tools[] = {
+    "Automated data backup tool",
+    "Automated testing framework",
+    "Automated code deployment tool",
+    "Automated log analysis tool",
+    "Automated email sender",
+    "Automated report generator"
+};
+int numTools = sizeof(tools) / sizeof(tools[0]);
+
 // Function to generate a random automation tool
 void generateAutomationTool() {
-    char *tools[] = {
-        "Automated data backup tool",
-        "Automated testing framework",
-        "Automated code deployment tool",
-        "Automated log analysis tool",
-        "Automated email sender",
-        "Automated report generator"
-    };
-
-    int numTools = sizeof(tools) / sizeof(tools[0]);
-
     // Generate a random index to choose a tool from the array
     int randomIndex = rand() % numTools;
 
@@ -25,17 +25,6 @@ void generateAutomationTool() {
 
 // Function to check if a specific tool is generated
 void checkGeneratedTool(char *toolName) {
-    char *tools[] = {
-        "Automated data backup tool",
-        "Automated testing framework",
-        "Automated code deployment tool",
-        "Automated log analysis tool",
-        "Automated email sender",
-        "Automated report generator"
-    };
-
-    int numTools = sizeof(tools) / sizeof(tools[0]);
-
     for (int i = 0; i < numTools; i++) {
         if (strcmp(toolName, tools[i]) == 0) {
             printf("The generated tool matches the specified tool: %s\n", toolName);
@@ -54,23 +43,18 @@ void displayAllTools() {
     }
 }
 
+// Function to add a new automation tool
+void addAutomationTool(char *newTool) {
+    tools[numTools] = newTool;
+    numTools++;
+    printf("New tool added: %s\n", newTool);
+}
+
 int main() {
     // Seed the random number generator
     srand(time(NULL));
 
-    char *tools[] = {
-        "Automated data backup tool",
-        "Automated testing framework",
-        "Automated code deployment tool",
-        "Automated log analysis tool",
-        "Automated email sender",
-        "Automated report generator"
-    };
-
-    int numTools = sizeof(tools) / sizeof(tools[0]);
-
     printf("Generating Random Automation Tool...\n");
-
     generateAutomationTool();
 
     // Check if a specific tool is generated
@@ -80,20 +64,13 @@ int main() {
     // Display all available tools
     displayAllTools();
 
+    // Adding a new tool
+    char newTool[] = "Automated UI testing tool";
+    addAutomationTool(newTool);
+
+    // Display all available tools after adding new tool
+    displayAllTools();
+    
     return 0;
 }
-```
-
-**Output**
-```
-Generating Random Automation Tool...
-Random Automation Tool: Automated code deployment tool
-The generated tool matches the specified tool: Automated testing framework
-Available Automation Tools:
-1. Automated data backup tool
-2. Automated testing framework
-3. Automated code deployment tool
-4. Automated log analysis tool
-5. Automated email sender
-6. Automated report generator
 ```

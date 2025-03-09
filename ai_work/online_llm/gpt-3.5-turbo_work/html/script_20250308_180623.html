@@ -14,7 +14,12 @@
 
     <button onclick="refreshTool()">Generate New Tool</button> <!-- Button to generate a new tool -->
 
+    <button onclick="saveTool()">Save Tool</button> <!-- Button to save the currently displayed tool -->
+
     <script>
+        // Array to store saved tools
+        let savedTools = [];
+
         // Array of automation tools
         const tools = [
             "Automated Testing Tool",
@@ -45,6 +50,13 @@
             displayRandomTool();
         }
 
+        // Function to save the currently displayed tool
+        function saveTool() {
+            const currentTool = document.getElementById("output").textContent;
+            savedTools.push(currentTool);
+            alert(`"${currentTool}" has been saved!`);
+        }
+
         // Initial display of a random automation tool
         displayRandomTool();
     </script>
@@ -52,6 +64,7 @@
 </html>
 ```
 
-Output:
-- Initially shows a random automation tool.
-- Includes a "Generate New Tool" button that refreshes and displays a new random tool when clicked.
+Improvements:
+- Added a "Save Tool" button that allows users to save the currently displayed tool.
+- Created a `savedTools` array to store the saved tools for later reference.
+- Enhanced user interaction by providing the ability to save tools in addition to generating new random tools.

@@ -61,6 +61,15 @@ class AutomationTools {
             console.log(`${tool} is not in the list.`);
         }
     }
+
+    // Function to shuffle the list of automation tools
+    shuffleAutomationTools() {
+        for (let i = this.automationTools.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.automationTools[i], this.automationTools[j]] = [this.automationTools[j], this.automationTools[i]];
+        }
+        console.log('Automation Tools have been shuffled.');
+    }
 }
 
 // Create an instance of AutomationTools class
@@ -80,6 +89,10 @@ tools.displayAllAutomationTools();
 // Check if a specific tool exists in the list
 tools.checkIfToolExists('Selenium WebDriver');
 tools.checkIfToolExists('TestCafe');
+
+// Shuffle the list of automation tools and display all tools
+tools.shuffleAutomationTools();
+tools.displayAllAutomationTools();
 ```
 
 Output:
@@ -112,4 +125,16 @@ SoapUI
 Nightwatch
 Selenium WebDriver is in the list.
 TestCafe is not in the list.
+Automation Tools have been shuffled.
+All Automation Tools:
+Katalon Studio
+Jenkins
+Selenium WebDriver
+SoapUI
+Appium
+Protractor
+Robot Framework
+Nightwatch
+Postman
+TestNG
 ```
