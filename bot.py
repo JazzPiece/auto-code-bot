@@ -1,127 +1,118 @@
 import os
 import openai
-import git
+import subprocess
 import json
-import requests
-import random
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
 
-# Load API Key from .env file
+# Load environment variables
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise RuntimeError("Missing OpenAI API Key. Set it in .env.")
 
-# Load configuration file
+# Load configuration
 CONFIG_FILE = Path(__file__).parent / "bot_config.json"
 
 def load_config():
-    """Load bot configuration from JSON file."""
     if CONFIG_FILE.exists():
         with open(CONFIG_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {
-        "project_focus": "AI ML helper library",
+        "project_focus": "General_Project",
         "ai_tasks": 3,
-        "languages": [".py"],
         "openai_model": "gpt-3.5-turbo"
     }
 
 config = load_config()
-project_focus = config.get("project_focus", "General Project")
+project_focus = config.get("project_focus", "General_Project")
 ai_tasks = config.get("ai_tasks", 3)
-languages = config.get("languages", [".py"])
 openai_model = config.get("openai_model", "gpt-3.5-turbo")
 
-# Initialize OpenAI client
-client = openai.OpenAI(api_key=OPENAI_API_KEY)
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Initialize directories
 REPO_DIR = Path(__file__).parent
 PROJECT_DIR = REPO_DIR / "ai_work" / project_focus.replace(" ", "_")
+SRC_DIR = PROJECT_DIR / "src"
+TASKS_DIR = PROJECT_DIR / "tasks"
+ANALYSIS_DIR = PROJECT_DIR / "analysis"
 LOGS_DIR = REPO_DIR / "logs"
-PROJECT_DIR.mkdir(parents=True, exist_ok=True)
-LOGS_DIR.mkdir(exist_ok=True)
 
-# Logging function
-log_filename = LOGS_DIR / f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+for directory in [TASKS_DIR, ANALYSIS_DIR, LOGS_DIR, SRC_DIR]:
+    directory.mkdir(parents=True, exist_ok=True)
+
+# Logging
 def log(message):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    log_entry = f"[{timestamp}] {message}"
-    print(log_entry)
-    with open(log_filename, "a", encoding="utf-8") as log_file:
-        log_file.write(log_entry + "\n")
+    entry = f"[{timestamp}] {message}"
+    print(entry)
+    with open(LOGS_DIR / f"run_{datetime.now().strftime('%Y%m%d')}.log", "a") as f:
+        f.write(entry + "\n")
 
-log(f"🚀 AI Code Bot started working on project: {project_focus}")
+log(f"AI Code Bot started on project: {project_focus}")
 
-# Initialize Git repository
-repo = git.Repo(REPO_DIR)
+# Project analysis
+existing_files = list(SRC_DIR.glob("*.py"))
+existing_code = "\n\n".join(file.read_text() for file in existing_files) if existing_files else "No existing files. This is a new project."
 
-# Analyze existing project files
-def analyze_project():
-    """Analyze the current project structure and codebase."""
-    existing_files = list(PROJECT_DIR.glob("**/*.*"))
-    log(f"📌 Found {len(existing_files)} existing files in project.")
-    return existing_files
+analysis_prompt = f"""
+You are improving the '{project_focus}' project.
 
-existing_files = analyze_project()
+Existing code:
+{existing_code}
 
-# Generate AI-driven tasks
-def generate_tasks():
-    """Generate AI tasks based on the project focus."""
-    prompt = f"""
-    You are an AI assistant working on {project_focus}. Generate {ai_tasks} improvement tasks for the project.
-    Ensure tasks are relevant and progressively improve the system.
-    Provide clear, structured tasks.
-    """
-    log("📌 Generating AI-driven tasks...")
-    response = client.chat.completions.create(
-        model=openai_model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.8
-    )
-    tasks = response.choices[0].message.content.split("\n")
-    log(f"✅ Generated {len(tasks)} tasks.")
-    return tasks[:ai_tasks]
+Identify meaningful improvements and clearly define exactly {ai_tasks} executable Python scripts to enhance the project.
 
-tasks = generate_tasks()
+For each task, provide exactly:
+filename: descriptive_name.py
+code:
+<python script>
 
-# Process each task
-def execute_tasks(tasks):
-    """Execute each AI-generated task."""
-    for idx, task in enumerate(tasks, 1):
-        log(f"🔍 Processing Task {idx}/{len(tasks)}: {task}")
-        task_prompt = f"""
-        Implement the following task in {project_focus}:
-        {task}
-        Ensure clear documentation, code structure, and best practices.
-        """
-        response = client.chat.completions.create(
-            model=openai_model,
-            messages=[{"role": "user", "content": task_prompt}],
-            temperature=0.8
-        )
-        generated_code = response.choices[0].message.content
-        
-        if generated_code:
-            filename = PROJECT_DIR / f"task_{idx}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.py"
-            filename.write_text(generated_code, encoding="utf-8")
-            log(f"✅ Created: {filename}")
-        else:
-            log("⚠️ AI did not return valid code for this task.")
+Do not provide explanations or markdown formatting. Separate each task with '<--script-->'.
+"""
 
-execute_tasks(tasks)
+log("Generating tasks based on current analysis...")
+response = client.chat.completions.create(
+    model=openai_model,
+    messages=[{"role": "user", "content": analysis_prompt}],
+    temperature=0.7
+)
 
-# Commit and push changes if modifications were made
-if repo.is_dirty():
-    repo.git.add(A=True)
-    commit_message = f"AI: {project_focus} updates - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-    repo.index.commit(commit_message)
-    repo.remotes.origin.push()
-    log(f"📌 Changes committed and pushed to GitHub: {commit_message}")
-else:
-    log("✅ No changes to commit. AI did not make modifications.")
+raw_tasks = response.choices[0].message.content.strip().split('<--script-->')
 
-log("🚀 AI Code Bot execution completed successfully.")
+# Parse tasks explicitly
+parsed_tasks = []
+for task_block in raw_tasks:
+    if "filename:" in task_block and "code:" in task_block:
+        try:
+            filename_part, code_part = task_block.split("code:", 1)
+            filename = filename_part.replace("filename:", "").strip()
+            code = code_part.strip()
+            if filename.endswith('.py') and ("def" in code or "import" in code):
+                parsed_tasks.append((filename, code))
+        except ValueError:
+            continue
+
+log(f"Generated {len(parsed_tasks)} meaningful scripts.")
+
+# Store, validate, execute tasks
+for filename, script in parsed_tasks:
+    task_path = TASKS_DIR / filename
+    task_path.write_text(script, encoding="utf-8")
+    log(f"Stored task: {task_path}")
+
+    # Syntax validation
+    try:
+        compile(script, filename=str(task_path), mode="exec")
+        result = subprocess.run(["python", str(task_path)], capture_output=True, text=True, check=True)
+        log(f"Execution success {task_path}:\n{result.stdout}")
+        task_path.rename(SRC_DIR / filename)
+        log(f"Moved executed script to src: {SRC_DIR / filename}")
+    except SyntaxError as e:
+        log(f"Syntax error in {task_path}: {e}")
+    except subprocess.CalledProcessError as e:
+        log(f"Execution failed for {task_path}: {e.stderr}")
+
+log("AI Code Bot run complete.")
