@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Useful Automation Tools Generator</title>
+</head>
+<body>
+    <h1>Random Useful Automation Tools Generator</h1>
+
+    <p>Click the button below to generate a random automation tool:</p>
+    
+    <button onclick="generateRandomTool()">Generate Tool</button>
+
+    <p id="toolOutput"></p>
+
+    <script>
+        // Function to generate a random automation tool
+        function generateRandomTool() {
+            // List of useful automation tools
+            const automationTools = [
+                "AutoHotkey for automating Windows tasks",
+                "Selenium for web browser automation",
+                "Zapier for connecting and automating workflows",
+                "Jenkins for continuous integration and deployment",
+                "Postman for API testing and automation",
+                "Ansible for configuration management and automation",
+                "Robot Framework for test automation",
+                "Puppet for infrastructure automation",
+                "GitLab CI/CD for automating software delivery",
+                "AWS Lambda for serverless computing"
+            ];
+
+            // Generate a random index to select a tool from the list
+            const randomIndex = Math.floor(Math.random() * automationTools.length);
+
+            // Get the random tool
+            const randomTool = automationTools[randomIndex];
+
+            // Display the random tool on the webpage
+            const toolOutputElement = document.getElementById("toolOutput");
+            toolOutputElement.textContent = "Random Automation Tool: " + randomTool;
+        }
+    </script>
+</body>
+</html>

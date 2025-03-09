@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,35 +12,46 @@
 
     <p id="output"></p>
 
+    <button onclick="refreshTool()">Generate New Tool</button> <!-- Button to generate a new tool -->
+
     <script>
+        // Array of automation tools
+        const tools = [
+            "Automated Testing Tool",
+            "Data Scraping Tool",
+            "Task Scheduler",
+            "Automated Report Generator",
+            "Auto-Fill Form Tool",
+            "FTP Automation Tool"
+        ];
+
         // Function to generate a random automation tool
         function generateAutomationTool() {
-            const tools = [
-                "Automated Testing Tool",
-                "Data Scraping Tool",
-                "Task Scheduler",
-                "Automated Report Generator",
-                "Auto-Fill Form Tool",
-                "FTP Automation Tool"
-            ];
-
             // Generate a random index to select a tool from the array
             const randomIndex = Math.floor(Math.random() * tools.length);
-
             // Return the randomly selected tool
             return tools[randomIndex];
         }
 
-        // Get a random automation tool
-        const randomTool = generateAutomationTool();
+        // Function to display the random automation tool
+        function displayRandomTool() {
+            const randomTool = generateAutomationTool();
+            const outputElement = document.getElementById("output");
+            outputElement.textContent = `Random Automation Tool: ${randomTool}`;
+        }
 
-        // Display the random automation tool on the web page
-        const outputElement = document.getElementById("output");
-        outputElement.textContent = `Random Automation Tool: ${randomTool}`;
+        // Function to refresh and display a new automation tool
+        function refreshTool() {
+            displayRandomTool();
+        }
+
+        // Initial display of a random automation tool
+        displayRandomTool();
     </script>
 </body>
 </html>
 ```
 
 Output:
-Random Automation Tool: Data Scraping Tool
+- Initially shows a random automation tool.
+- Includes a "Generate New Tool" button that refreshes and displays a new random tool when clicked.

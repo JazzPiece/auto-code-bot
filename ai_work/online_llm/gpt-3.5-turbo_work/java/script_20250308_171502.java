@@ -48,6 +48,16 @@ public class AutomationToolGenerator {
         System.out.println(tool + " has been added to the list of available tools.");
     }
 
+    // Function to remove a tool from the list
+    public static void removeTool(String tool) {
+        if (availableTools.contains(tool)) {
+            availableTools.remove(tool);
+            System.out.println(tool + " has been removed from the list of available tools.");
+        } else {
+            System.out.println(tool + " is not in the list of available tools.");
+        }
+    }
+
     public static void main(String[] args) {
         // Initialize available tools
         initializeAvailableTools();
@@ -75,6 +85,13 @@ public class AutomationToolGenerator {
         addTool(newTool);
 
         // Displaying all available tools after adding the new tool
+        displayAllTools();
+
+        // Removing a tool from the list
+        String toolToRemove = "Cypress";
+        removeTool(toolToRemove);
+
+        // Displaying all available tools after removing Cypress
         displayAllTools();
     }
 }

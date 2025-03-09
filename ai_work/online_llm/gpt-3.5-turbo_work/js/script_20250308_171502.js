@@ -35,11 +35,7 @@ function isTestingTool(tool) {
         "Web Page Screenshot Generator"
     ];
 
-    if (testingTools.includes(tool)) {
-        return true;
-    } else {
-        return false;
-    }
+    return testingTools.includes(tool);
 }
 
 /**
@@ -70,6 +66,19 @@ function getToolCategory(tool) {
  * @returns {string} A recommended tool in the same category
  */
 function recommendSimilarTool(tool) {
+    const categories = {
+        "Automated Testing Framework": "Testing",
+        "Task Scheduler": "Scheduling",
+        "Data Scraping Bot": "Data Scraping",
+        "Web Page Screenshot Generator": "Web Development",
+        "Automated Email Sender": "Email",
+        "Code Deployment Tool": "Deployment",
+        "Network Monitoring Tool": "Monitoring",
+        "Automated Backup System": "Backup",
+        "File Compression Utility": "File Management",
+        "Auto-Responder Chatbot": "Chatbot"
+    };
+    
     const toolCategory = getToolCategory(tool);
     const categoryTools = Object.keys(categories).filter(category => categories[category] === toolCategory && category !== tool);
     
@@ -95,4 +104,5 @@ console.log("Category: " + toolCategory);
 // Recommend a similar tool in the same category
 const similarTool = recommendSimilarTool(randomAutomationTool);
 console.log("Recommended Tool in the same category: " + similarTool);
+```
 ```

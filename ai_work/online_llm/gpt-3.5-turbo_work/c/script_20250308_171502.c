@@ -70,6 +70,30 @@ void displayToolSummary() {
     printf("5. Scripting Language Tool: For task automation.\n");
 }
 
+// Function to recommend a tool based on user input
+void recommendToolByCategory(char category) {
+    switch(category) {
+        case 't':
+            printf("Based on your preference, we recommend an Automated Testing Tool.\n");
+            break;
+        case 'c':
+            printf("Based on your preference, we recommend a CI/CD Pipeline Tool.\n");
+            break;
+        case 'i':
+            printf("Based on your preference, we recommend an Infrastructure as Code Tool.\n");
+            break;
+        case 'l':
+            printf("Based on your preference, we recommend a Logging and Monitoring Tool.\n");
+            break;
+        case 's':
+            printf("Based on your preference, we recommend a Scripting Language Tool.\n");
+            break;
+        default:
+            printf("No recommendation available for this category.\n");
+            break;
+    }
+}
+
 int main() {
     // Seed the random number generator
     srand(time(0));
@@ -98,6 +122,10 @@ int main() {
             scanf("%d", &toolChoice);
             getToolInformation(toolChoice);
         }
+
+        printf("\nDo you have a preference for a specific category? (t/c/i/l/s/n): ");
+        scanf(" %c", &userInput);
+        recommendToolByCategory(userInput);
 
         printf("\nDo you want to generate another random automation tool? (y/n): ");
         scanf(" %c", &userInput);

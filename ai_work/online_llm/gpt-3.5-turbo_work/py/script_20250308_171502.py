@@ -26,9 +26,12 @@ class AutomationToolGenerator:
         filtered_tools = [tool for tool in self.tools if keyword.lower() in tool.lower()]
         return filtered_tools
 
-# Function to check if a tool is a backup tool
-def check_backup(tool):
-    return "backup" in tool.lower()
+    def check_backup(self, tool_name):
+        return "backup" in tool_name.lower()
+
+    def generate_backup_tools_only(self, num_tools):
+        backup_tools = [tool for tool in self.tools if self.check_backup(tool)]
+        return random.sample(backup_tools, num_tools)
 
 def main():
     num_tools = 7  # Increased number of tools to generate
@@ -47,12 +50,12 @@ def main():
     for i, tool in enumerate(filtered_tools):
         print("Tool {}: {}".format(i+1, tool))
 
+    num_backup_tools = 3  # Number of backup tools to generate
+    backup_tools = tool_generator.generate_backup_tools_only(num_backup_tools)
+    print("\nGenerating {} backup tools:".format(num_backup_tools))
+    for i, tool in enumerate(backup_tools):
+        print("Backup Tool {}: {}".format(i+1, tool))
+
 if __name__ == "__main__":
     main()
-    
-    tool_to_check = "Automated backup tool"
-    if check_backup(tool_to_check):
-        print(f"\n{tool_to_check} is a backup tool.")
-    else:
-        print(f"\n{tool_to_check} is not a backup tool.")
 ```
