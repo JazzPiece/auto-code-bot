@@ -1,6 +1,8 @@
 {
-	"languages": [ ".py", ".java", ".c", ".js", ".html" ],
+	"project_focus": "Automation Tools",
+	"languages": [ ".py" ],
 	"max_new_files_per_language": 1,
 	"max_modified_files_per_language": 1,
 	"openai_model": "gpt-3.5-turbo"
 }
+

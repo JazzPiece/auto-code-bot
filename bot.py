@@ -1,41 +1,12 @@
 import os
 import openai
 import git
-import time
 import json
 import requests
 import random
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
-import getpass
-import sys
-import os
-from datetime import datetime
-
-# Test if Task Scheduler runs the script
-log_path = "C:\\Users\\young\\task_scheduler_test.log"
-with open(log_path, "a") as f:
-    f.write(f"Task Scheduler ran bot.py at {datetime.now()}\n")
-
-# Logging function
-# Define repo directory first
-REPO_DIR = Path(__file__).parent
-LOGS_DIR = REPO_DIR / "logs"
-LOGS_DIR.mkdir(exist_ok=True)
-log_filename = LOGS_DIR / f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-
-def log(message):
-    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    log_entry = f"[{timestamp}] {message}"
-    print(log_entry)
-    with open(log_filename, "a", encoding="utf-8") as log_file:
-        log_file.write(log_entry + "\n")
-log(f" Running as user: {getpass.getuser()}")
-log(f" Current working directory: {os.getcwd()}")
-log(f" Python executable: {sys.executable}")
-log(f" Repo path: {REPO_DIR}")
-
 
 # Load API Key from .env file
 load_dotenv()
@@ -46,26 +17,22 @@ if not OPENAI_API_KEY:
 # Load configuration file
 CONFIG_FILE = Path(__file__).parent / "bot_config.json"
 
-with open("C:\\Users\\young\\task_scheduler_test.log", "a") as f:
-    f.write(f"Task Scheduler ran the bot at {datetime.now()}\n")
-
-
 def load_config():
     """Load bot configuration from JSON file."""
     if CONFIG_FILE.exists():
         with open(CONFIG_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {
+        "project_focus": "AI ML helper library",
+        "ai_tasks": 3,
         "languages": [".py"],
-        "max_new_files_per_language": 1,
-        "max_modified_files_per_language": 1,
         "openai_model": "gpt-3.5-turbo"
     }
 
 config = load_config()
+project_focus = config.get("project_focus", "General Project")
+ai_tasks = config.get("ai_tasks", 3)
 languages = config.get("languages", [".py"])
-max_new_files = config.get("max_new_files_per_language", 1)
-max_modified_files = config.get("max_modified_files_per_language", 1)
 openai_model = config.get("openai_model", "gpt-3.5-turbo")
 
 # Initialize OpenAI client
@@ -73,9 +40,9 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Initialize directories
 REPO_DIR = Path(__file__).parent
-AI_WORK_DIR = REPO_DIR / "ai_work" / "online_llm" / f"{openai_model}_work"
+PROJECT_DIR = REPO_DIR / "ai_work" / project_focus.replace(" ", "_")
 LOGS_DIR = REPO_DIR / "logs"
-AI_WORK_DIR.mkdir(parents=True, exist_ok=True)
+PROJECT_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 
 # Logging function
@@ -87,113 +54,70 @@ def log(message):
     with open(log_filename, "a", encoding="utf-8") as log_file:
         log_file.write(log_entry + "\n")
 
-log("🚀 AI Code Bot started running...")
+log(f"🚀 AI Code Bot started working on project: {project_focus}")
 
 # Initialize Git repository
 repo = git.Repo(REPO_DIR)
 
-# Fetch a unique automation idea from a free API
-def fetch_automation_idea():
-    """Fetch a unique automation idea from a free API."""
-    try:
-        response = requests.get("https://api.publicapis.org/entries")
-        if response.status_code == 200:
-            data = response.json()
-            entries = data.get("entries", [])
-            if entries:
-                api_entry = random.choice(entries)
-                idea = f"Create a script that interacts with the {api_entry['API']} API ({api_entry['Description']})."
-                log(f"📌 Selected Automation Idea: {idea}")
-                return idea
-    except Exception as e:
-        log(f"⚠️ Error fetching automation idea: {e}")
-    return "Create a script that generates random useful automation tools."
+# Analyze existing project files
+def analyze_project():
+    """Analyze the current project structure and codebase."""
+    existing_files = list(PROJECT_DIR.glob("**/*.*"))
+    log(f"📌 Found {len(existing_files)} existing files in project.")
+    return existing_files
 
-# ✅ Always create new files up to the limit
-for lang in languages:
-    ext = lang.strip().lower()
-    lang_dir = AI_WORK_DIR / ext.lstrip(".")
-    lang_dir.mkdir(parents=True, exist_ok=True)
+existing_files = analyze_project()
 
-    for _ in range(max_new_files):
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        new_file = lang_dir / f"script_{timestamp}{ext}"
+# Generate AI-driven tasks
+def generate_tasks():
+    """Generate AI tasks based on the project focus."""
+    prompt = f"""
+    You are an AI assistant working on {project_focus}. Generate {ai_tasks} improvement tasks for the project.
+    Ensure tasks are relevant and progressively improve the system.
+    Provide clear, structured tasks.
+    """
+    log("📌 Generating AI-driven tasks...")
+    response = client.chat.completions.create(
+        model=openai_model,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.8
+    )
+    tasks = response.choices[0].message.content.split("\n")
+    log(f"✅ Generated {len(tasks)} tasks.")
+    return tasks[:ai_tasks]
 
-        selected_task = fetch_automation_idea()
+tasks = generate_tasks()
 
-        code_prompt = f"""
-        Write a **completely unique** script in {ext} programming language.
-        The script should perform the following task:
-
-        {selected_task}
-
-        Requirements:
-        - Use functions (if applicable) with proper documentation.
-        - Be well-structured and readable.
-        - Include helpful inline comments.
-        - Provide full script output.
-
-        Ensure the script follows best practices for {ext}.
+# Process each task
+def execute_tasks(tasks):
+    """Execute each AI-generated task."""
+    for idx, task in enumerate(tasks, 1):
+        log(f"🔍 Processing Task {idx}/{len(tasks)}: {task}")
+        task_prompt = f"""
+        Implement the following task in {project_focus}:
+        {task}
+        Ensure clear documentation, code structure, and best practices.
         """
-
-        log(f"📌 Generating a new {ext} script: {new_file}")
-        ai_generated_code = client.chat.completions.create(
+        response = client.chat.completions.create(
             model=openai_model,
-            messages=[{"role": "user", "content": code_prompt}],
-            temperature=0.9
-        ).choices[0].message.content
-
-        if ai_generated_code:
-            new_file.write_text(ai_generated_code, encoding="utf-8")
-            log(f"✅ New {ext} file created: {new_file}")
+            messages=[{"role": "user", "content": task_prompt}],
+            temperature=0.8
+        )
+        generated_code = response.choices[0].message.content
+        
+        if generated_code:
+            filename = PROJECT_DIR / f"task_{idx}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.py"
+            filename.write_text(generated_code, encoding="utf-8")
+            log(f"✅ Created: {filename}")
         else:
-            log(f"⚠️ AI did not return valid {ext} code. Skipping.")
+            log("⚠️ AI did not return valid code for this task.")
 
-# ✅ Modify existing files up to the limit
-for lang in languages:
-    lang_dir = AI_WORK_DIR / lang.lstrip(".")
-    files = list(lang_dir.glob(f"*.{lang.lstrip('.')}") )
+execute_tasks(tasks)
 
-    if len(files) > max_modified_files:
-        files = random.sample(files, max_modified_files)
-
-    for file in files:
-        log(f"🔍 Enhancing file: {file}")
-
-        original_code = file.read_text(encoding="utf-8")
-
-        modify_prompt = f"""
-        Below is an existing script. Add **new functionality** to improve it. 
-        You can:
-        - Add a new function.
-        - Add an extra feature.
-        - Extend an existing class.
-        - Ensure the new code is useful, with proper comments.
-
-        Do not just fix errors—expand functionality.
-
-        ```{lang}
-        {original_code}
-        ```
-        Provide the improved full script.
-        """
-
-        modified_code = client.chat.completions.create(
-            model=openai_model,
-            messages=[{"role": "user", "content": modify_prompt}],
-            temperature=0.9
-        ).choices[0].message.content
-
-        if modified_code and modified_code != original_code:
-            file.write_text(modified_code, encoding="utf-8")
-            log(f"✅ Updated file: {file}")
-        else:
-            log(f"⚠️ AI did not make significant changes: {file}")
-
-# ✅ Commit and push changes if modifications were made
+# Commit and push changes if modifications were made
 if repo.is_dirty():
     repo.git.add(A=True)
-    commit_message = f"AI: Updated scripts with new features - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    commit_message = f"AI: {project_focus} updates - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     repo.index.commit(commit_message)
     repo.remotes.origin.push()
     log(f"📌 Changes committed and pushed to GitHub: {commit_message}")
