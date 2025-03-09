@@ -26,14 +26,14 @@ void generateAutomationTool() {
     printf("Random Automation Tool Generated: %s\n", tools[randomIndex]);
 }
 
-// Function to display the available automation tools
-void displayAvailableTools() {
+// Function to display the available automation tools with descriptions
+void displayAvailableToolsWithDescriptions() {
     printf("\nAvailable Automation Tools:\n");
-    printf("1. Automated Testing Tool\n");
-    printf("2. CI/CD Pipeline Tool\n");
-    printf("3. Infrastructure as Code Tool\n");
-    printf("4. Logging and Monitoring Tool\n");
-    printf("5. Scripting Language Tool\n");
+    printf("1. Automated Testing Tool - Used for automatic software testing.\n");
+    printf("2. CI/CD Pipeline Tool - Enables continuous integration/continuous deployment of code.\n");
+    printf("3. Infrastructure as Code Tool - Manages infrastructure through code.\n");
+    printf("4. Logging and Monitoring Tool - Monitors application performance and logs events.\n");
+    printf("5. Scripting Language Tool - Used for automating tasks through scripts.\n");
 }
 
 int main() {
@@ -45,7 +45,7 @@ int main() {
     char userInput;
     
     do {
-        displayAvailableTools();
+        displayAvailableToolsWithDescriptions();
         generateAutomationTool();
 
         printf("\nDo you want to generate another random automation tool? (y/n): ");

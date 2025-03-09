@@ -47,6 +47,18 @@ def main():
     print("Randomly generated useful automation tool:", tool)
     describe_tool(tool)
 
+# Function to list all available tools
+def list_available_tools():
+    """
+    This function lists all the available useful automation tools.
+    """
+    tools = ["Automated screenshot taker", "File organizer", "Automated email sender", "Code snippet generator",
+             "Automated data backup tool", "Website monitoring tool", "Text substitution tool"]
+
+    print("Available automation tools:")
+    for tool in tools:
+        print(tool)
+
 if __name__ == "__main__":
     main()
 ```
@@ -57,4 +69,4 @@ Randomly generated useful automation tool: Automated screenshot taker
 Description of Automated screenshot taker: Tool that captures screenshots automatically at specified intervals.
 ``` 
 
-In the improved script, a new function `describe_tool` has been added to provide descriptions of the generated tools. This enhances the script by providing additional information about the usefulness of the randomly generated automation tool.
+In the improved script, a new function `list_available_tools` has been added to showcase all the available useful automation tools. This extra feature allows users to see the complete list of tools they can generate and learn more about.

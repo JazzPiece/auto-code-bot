@@ -17,8 +17,8 @@ public class AutomationToolGenerator {
     public static boolean isToolAvailable(String tool) {
         String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
 
-        for(String availableTool : tools) {
-            if(availableTool.equalsIgnoreCase(tool)) {
+        for (String availableTool : tools) {
+            if (availableTool.equalsIgnoreCase(tool)) {
                 return true;
             }
         }
@@ -29,11 +29,18 @@ public class AutomationToolGenerator {
     // Function to display all available tools
     public static void displayAllTools() {
         String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
-        
+
         System.out.println("Available Automation Tools:");
-        for(String tool : tools) {
+        for (String tool : tools) {
             System.out.println(tool);
         }
+    }
+
+    // Function to get the total number of available tools
+    public static int getTotalNumberOfTools() {
+        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
+
+        return tools.length;
     }
 
     public static void main(String[] args) {
@@ -43,7 +50,7 @@ public class AutomationToolGenerator {
 
         // Checking if Selenium is available
         String toolToCheck = "Selenium";
-        if(isToolAvailable(toolToCheck)) {
+        if (isToolAvailable(toolToCheck)) {
             System.out.println(toolToCheck + " is available.");
         } else {
             System.out.println(toolToCheck + " is not available.");
@@ -51,6 +58,9 @@ public class AutomationToolGenerator {
 
         // Displaying all available tools
         displayAllTools();
+
+        // Getting the total number of available tools
+        System.out.println("Total number of available tools: " + getTotalNumberOfTools());
     }
 }
 ```

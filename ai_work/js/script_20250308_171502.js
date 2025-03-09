@@ -1,4 +1,4 @@
-```javascript
+```js
 /**
  * Function to generate a random useful automation tool
  * @returns {string} A randomly generated automation tool
@@ -42,6 +42,28 @@ function isTestingTool(tool) {
     }
 }
 
+/**
+ * Function to get the category of a given automation tool
+ * @param {string} tool - The tool name to check
+ * @returns {string} The category of the automation tool
+ */
+function getToolCategory(tool) {
+    const categories = {
+        "Automated Testing Framework": "Testing",
+        "Task Scheduler": "Scheduling",
+        "Data Scraping Bot": "Data Scraping",
+        "Web Page Screenshot Generator": "Web Development",
+        "Automated Email Sender": "Email",
+        "Code Deployment Tool": "Deployment",
+        "Network Monitoring Tool": "Monitoring",
+        "Automated Backup System": "Backup",
+        "File Compression Utility": "File Management",
+        "Auto-Responder Chatbot": "Chatbot"
+    };
+
+    return categories[tool] || "Uncategorized";
+}
+
 // Generate and print a random automation tool
 const randomAutomationTool = generateRandomAutomationTool();
 console.log("Random Automation Tool: " + randomAutomationTool);
@@ -52,4 +74,8 @@ if (isTestingTool(randomAutomationTool)) {
 } else {
     console.log(randomAutomationTool + " is not a testing tool.");
 }
+
+// Get and print the category of the random automation tool
+const toolCategory = getToolCategory(randomAutomationTool);
+console.log("Category: " + toolCategory);
 ```
