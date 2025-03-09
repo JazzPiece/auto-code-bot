@@ -70,10 +70,17 @@
         function displayAllTools() {
             alert("List of Automation Tools:\n" + tools.join("\n"));
         }
+
+        // Function to clear all tools in the list
+        function clearAllTools() {
+            tools.length = 0;
+            alert("All tools cleared from the list.");
+        }
     </script>
     <button onclick="addNewTool()">Add New Tool</button>
     <button onclick="removeTool()">Remove Tool</button>
     <button onclick="displayAllTools()">Display All Tools</button>
+    <button onclick="clearAllTools()">Clear All Tools</button>
 </body>
 </html>
 ```

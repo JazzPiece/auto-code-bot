@@ -10,6 +10,14 @@ from datetime import datetime
 from dotenv import load_dotenv
 import getpass
 import sys
+import os
+from datetime import datetime
+
+# Test if Task Scheduler runs the script
+log_path = "C:\\Users\\young\\task_scheduler_test.log"
+with open(log_path, "a") as f:
+    f.write(f"Task Scheduler ran bot.py at {datetime.now()}\n")
+
 # Logging function
 # Define repo directory first
 REPO_DIR = Path(__file__).parent

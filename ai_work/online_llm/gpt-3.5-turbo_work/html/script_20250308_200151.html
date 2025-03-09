@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Automation Tool Generator</title>
+</head>
+<body>
+	<h1>Random Automation Tool Generator</h1>
+	<p>Click the button below to generate a random useful automation tool:</p>
+	<button onclick="generateTool()">Generate Tool</button>
+	<p id="toolOutput"></p>
+
+	<script>
+		// Function to generate a random automation tool
+		function generateTool() {
+			const tools = ["Scripting Language Interpreter", "Automated Testing Framework", "Task Scheduler", "Data Scraping Tool", "File Backup Utility", "Automated Email Sender"];
+			const randomIndex = Math.floor(Math.random() * tools.length);
+			const randomTool = tools[randomIndex];
+			displayTool(randomTool);
+		}
+
+		// Function to display the generated tool on the webpage
+		function displayTool(tool) {
+			const toolOutput = document.getElementById("toolOutput");
+			toolOutput.textContent = "Random Automation Tool: " + tool;
+		}
+	</script>
+</body>
+</html>
