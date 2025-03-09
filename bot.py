@@ -2,6 +2,7 @@ import os
 import openai
 import git
 import time
+import json
 import requests
 from pathlib import Path
 from datetime import datetime
@@ -20,10 +21,22 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 REPO_DIR = Path(__file__).parent
 AI_WORK_DIR = REPO_DIR / "ai_work"
 LOGS_DIR = REPO_DIR / "logs"
+CONFIG_FILE = REPO_DIR / "bot_config.json"
 
 # Ensure directories exist
 AI_WORK_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
+
+# Load configuration file
+def load_config():
+    """Load bot configuration from JSON file."""
+    if CONFIG_FILE.exists():
+        with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"languages": [".py"]}  # Default to Python if no config file
+
+config = load_config()
+languages = config.get("languages", [".py"])  # Get the list of languages to generate
 
 # Create log file with timestamp
 log_filename = LOGS_DIR / f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
@@ -39,23 +52,6 @@ log("🚀 AI Code Bot started running...")
 
 # Initialize Git repository
 repo = git.Repo(REPO_DIR)
-
-# Find all Python files inside ai_work (excluding bot.py and logs)
-python_files = [f for f in AI_WORK_DIR.rglob("*.py")]
-
-# Function to generate AI-written code
-def generate_code(prompt):
-    """Uses OpenAI API to generate new Python code."""
-    try:
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.9  # Higher temp for more creativity
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        log(f"❌ Error in AI generation: {e}")
-        return None
 
 # ✅ Fetch a unique automation idea from a free API
 def fetch_automation_idea():
@@ -76,66 +72,55 @@ def fetch_automation_idea():
 
 # ✅ Always generate a **new** script every time the bot runs
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-new_file = AI_WORK_DIR / f"script_{timestamp}.py"
 
-# Fetch an automation idea dynamically
-selected_task = fetch_automation_idea()
+# ✅ Loop through each language and generate a script
+for lang in languages:
+    ext = lang.strip().lower()
+    if ext not in [".py", ".java", ".c", ".js", ".html"]:
+        log(f"⚠️ Skipping unsupported language: {ext}")
+        continue
 
-code_prompt = f"""
-Write a **completely unique** Python script.
-The script should perform the following task:
+    # Set directory based on language
+    lang_dir = AI_WORK_DIR / ext.lstrip(".")
+    lang_dir.mkdir(parents=True, exist_ok=True)
 
-{selected_task}
+    new_file = lang_dir / f"script_{timestamp}{ext}"
+    
+    # Fetch an automation idea dynamically
+    selected_task = fetch_automation_idea()
 
-Requirements:
-- Use functions with proper docstrings.
-- Be well-structured and readable.
-- Include helpful inline comments.
-- Add a `main()` function for execution.
+    code_prompt = f"""
+    Write a **completely unique** script in {ext} programming language.
+    The script should perform the following task:
 
-Provide the full script as output.
-"""
-log(f"📌 Generating a unique Python script: {new_file}")
-ai_generated_code = generate_code(code_prompt)
+    {selected_task}
 
-if ai_generated_code:
-    new_file.write_text(ai_generated_code, encoding="utf-8")
-    log(f"✅ New Python file created: {new_file}")
-    python_files.append(new_file)
-else:
-    log("⚠️ AI did not return valid code. Skipping new file creation.")
+    Requirements:
+    - Use functions (if applicable) with proper documentation.
+    - Be well-structured and readable.
+    - Include helpful inline comments.
+    - Provide full script output.
 
-# ✅ Process existing files (modify and improve)
-for file in python_files:
-    log(f"🔍 Processing file: {file}")
-    original_code = file.read_text(encoding="utf-8")
-
-    # Generate improvements
-    prompt = f"""
-    Below is a Python script. Improve the code by:
-    - Adding missing docstrings
-    - Adding helpful inline comments
-    - Ensuring function names are descriptive
-    - Optimizing logic if needed
-    - Keeping structure clean and readable
-
-    ```python
-    {original_code}
-    ```
-    Provide the improved full script as output.
+    Ensure the script follows best practices for {ext}.
     """
-    improved_code = generate_code(prompt)
+    
+    log(f"📌 Generating a {ext} script: {new_file}")
+    ai_generated_code = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": code_prompt}],
+        temperature=0.9
+    ).choices[0].message.content
 
-    if improved_code and improved_code != original_code:
-        file.write_text(improved_code, encoding="utf-8")
-        log(f"✅ Updated file: {file}")
+    if ai_generated_code:
+        new_file.write_text(ai_generated_code, encoding="utf-8")
+        log(f"✅ New {ext} file created: {new_file}")
     else:
-        log(f"⚠️ No significant improvements made to: {file}")
+        log(f"⚠️ AI did not return valid {ext} code. Skipping.")
 
 # ✅ Commit and push changes if modifications were made
 if repo.is_dirty():
     repo.git.add(A=True)
-    commit_message = f"🤖 AI: New script + Code improvements - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    commit_message = f"🤖 AI: New {languages} scripts + Code improvements - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     repo.index.commit(commit_message)
     repo.remotes.origin.push()
     log(f"📌 Changes committed and pushed to GitHub: {commit_message}")

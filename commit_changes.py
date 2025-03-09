@@ -11,11 +11,11 @@ repo = git.Repo(REPO_DIR)
 if repo.is_dirty():
     print(" Changes detected. Committing and pushing...")
     
-    # Add all changes
-    repo.git.add(A=True)
+    # Add only files that should be tracked, avoiding permission issues
+    repo.git.add("--all", "--ignore-errors")
     
     # Generate a commit message with timestamp
-    commit_message = f" AI: Automated update - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    commit_message = f"AI: Automated update - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     repo.index.commit(commit_message)
 
     # Push to GitHub
