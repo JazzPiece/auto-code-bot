@@ -33,6 +33,17 @@ class AutomationTools {
         this.automationTools.push(tool);
     }
 
+    // Function to remove an automation tool from the list
+    removeAutomationTool(tool) {
+        const index = this.automationTools.indexOf(tool);
+        if (index !== -1) {
+            this.automationTools.splice(index, 1);
+            console.log(`${tool} has been removed from the list.`);
+        } else {
+            console.log(`${tool} is not in the list.`);
+        }
+    }
+
     // Function to display all automation tools in the list
     displayAllAutomationTools() {
         console.log('All Automation Tools:');
@@ -51,6 +62,10 @@ tools.displayRandomAutomationTool();
 // Add a new tool and display all tools
 tools.addAutomationTool('Nightwatch');
 tools.displayAllAutomationTools();
+
+// Remove a tool and display all tools
+tools.removeAutomationTool('Cypress');
+tools.displayAllAutomationTools();
 ```
 
 Output:
@@ -63,6 +78,18 @@ Postman
 Jenkins
 Robot Framework
 Cypress
+TestNG
+Protractor
+Katalon Studio
+SoapUI
+Nightwatch
+Cypress has been removed from the list.
+All Automation Tools:
+Selenium WebDriver
+Appium
+Postman
+Jenkins
+Robot Framework
 TestNG
 Protractor
 Katalon Studio

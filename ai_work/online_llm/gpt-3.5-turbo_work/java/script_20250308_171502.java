@@ -1,49 +1,51 @@
 ```java
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class AutomationToolGenerator {
 
+    private static List<String> availableTools = new ArrayList<>();
+
+    // Function to initialize available tools
+    public static void initializeAvailableTools() {
+        availableTools.add("Selenium");
+        availableTools.add("Appium");
+        availableTools.add("Jenkins");
+        availableTools.add("Postman");
+        availableTools.add("Robot Framework");
+        availableTools.add("Cypress");
+    }
+
     // Function to generate a random automation tool
     public static String generateAutomationTool() {
-        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
-
         Random random = new Random();
-        int index = random.nextInt(tools.length);
-
-        return tools[index];
+        int index = random.nextInt(availableTools.size());
+        return availableTools.get(index);
     }
 
     // Function to check if a specific tool is available
     public static boolean isToolAvailable(String tool) {
-        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
-
-        for (String availableTool : tools) {
-            if (availableTool.equalsIgnoreCase(tool)) {
-                return true;
-            }
-        }
-
-        return false;
+        return availableTools.contains(tool);
     }
 
     // Function to display all available tools
     public static void displayAllTools() {
-        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
-
         System.out.println("Available Automation Tools:");
-        for (String tool : tools) {
+        for (String tool : availableTools) {
             System.out.println(tool);
         }
     }
 
     // Function to get the total number of available tools
     public static int getTotalNumberOfTools() {
-        String[] tools = {"Selenium", "Appium", "Jenkins", "Postman", "Robot Framework", "Cypress"};
-
-        return tools.length;
+        return availableTools.size();
     }
 
     public static void main(String[] args) {
+        // Initialize available tools
+        initializeAvailableTools();
+
         System.out.println("Generating Random Automation Tool:");
         String automationTool = generateAutomationTool();
         System.out.println("Random Automation Tool: " + automationTool);

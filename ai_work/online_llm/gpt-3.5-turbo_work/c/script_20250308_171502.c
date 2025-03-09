@@ -60,6 +60,16 @@ void getToolInformation(int toolIndex) {
     }
 }
 
+// Function to provide a brief summary of all automation tools
+void displayToolSummary() {
+    printf("\nAutomation Tool Summary:\n");
+    printf("1. Automated Testing Tool: For software testing.\n");
+    printf("2. CI/CD Pipeline Tool: For code deployment.\n");
+    printf("3. Infrastructure as Code Tool: For managing infrastructure.\n");
+    printf("4. Logging and Monitoring Tool: For application performance.\n");
+    printf("5. Scripting Language Tool: For task automation.\n");
+}
+
 int main() {
     // Seed the random number generator
     srand(time(0));
@@ -70,6 +80,13 @@ int main() {
     
     do {
         displayAvailableToolsWithDescriptions();
+        printf("\nWould you like a brief summary of all automation tools? (y/n): ");
+        scanf(" %c", &userInput);
+
+        if(userInput == 'y' || userInput == 'Y') {
+            displayToolSummary();
+        }
+
         generateAutomationTool();
 
         printf("\nDo you want to get more information about a specific tool? (y/n): ");

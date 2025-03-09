@@ -41,9 +41,9 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Initialize directories
 REPO_DIR = Path(__file__).parent
-AI_WORK_DIR = REPO_DIR / "ai_work" / "online_llm" / f"{openai_model}_work"
+AI_WORK_DIR = REPO_DIR / "ai_work" /"online_llm" / f"{openai_model}_work"
 LOGS_DIR = REPO_DIR / "logs"
-AI_WORK_DIR.mkdir(parents=True, exist_ok=True)
+AI_WORK_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 
 # Logging function
@@ -84,8 +84,8 @@ for lang in languages:
     lang_dir.mkdir(parents=True, exist_ok=True)
 
     # Limit new files per language
-    existing_files = list(lang_dir.glob(f"*.{ext.lstrip('.')}") )
-    if len(existing_files) <= max_new_files:
+    existing_files = list(lang_dir.glob(f"*.{ext.lstrip('.')}"))
+    if len(existing_files) < max_new_files:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         new_file = lang_dir / f"script_{timestamp}{ext}"
 
@@ -118,6 +118,48 @@ for lang in languages:
             log(f"✅ New {ext} file created: {new_file}")
         else:
             log(f"⚠️ AI did not return valid {ext} code. Skipping.")
+
+# ✅ Loop through each language and modify a limited number of existing files
+for lang in languages:
+    lang_dir = AI_WORK_DIR / lang.lstrip(".")
+    files = list(lang_dir.glob(f"*.{lang.lstrip('.')}"))
+
+    # Modify only up to the specified number of files
+    if len(files) > max_modified_files:
+        files = random.sample(files, max_modified_files)
+
+    for file in files:
+        log(f"🔍 Enhancing file: {file}")
+
+        original_code = file.read_text(encoding="utf-8")
+
+        modify_prompt = f"""
+        Below is an existing script. Add **new functionality** to improve it. 
+        You can:
+        - Add a new function.
+        - Add an extra feature.
+        - Extend an existing class.
+        - Ensure the new code is useful, with proper comments.
+
+        Do not just fix errors—expand functionality.
+
+        ```{lang}
+        {original_code}
+        ```
+        Provide the improved full script.
+        """
+
+        modified_code = client.chat.completions.create(
+            model=openai_model,
+            messages=[{"role": "user", "content": modify_prompt}],
+            temperature=0.9
+        ).choices[0].message.content
+
+        if modified_code and modified_code != original_code:
+            file.write_text(modified_code, encoding="utf-8")
+            log(f"✅ Updated file: {file}")
+        else:
+            log(f"⚠️ AI did not make significant changes: {file}")
 
 # ✅ Commit and push changes if modifications were made
 if repo.is_dirty():
