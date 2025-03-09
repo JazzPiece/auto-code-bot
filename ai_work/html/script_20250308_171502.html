@@ -1,0 +1,55 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Useful Automation Tool Generator</title>
+</head>
+<body>
+
+<h1>Random Useful Automation Tool Generator</h1>
+
+<p>Click the button below to generate a random useful automation tool:</p>
+
+<button onclick="generateAutomationTool()">Generate Tool</button>
+
+<p id="toolOutput"></p>
+
+<script>
+    /**
+     * Function to generate a random automation tool
+     */
+    function generateAutomationTool() {
+        const tools = [
+            "Automated data backup tool",
+            "Scheduled task scheduler",
+            "File renaming automation tool",
+            "Text extraction tool from PDFs",
+            "Automated email sender",
+            "Web scraping tool",
+            "Automated testing tool",
+            "Code deployment automation tool",
+            "Automated report generator" // Added an additional tool
+        ];
+
+        // Generate a random index to select a tool from the array
+        const randomIndex = Math.floor(Math.random() * tools.length);
+
+        // Display the randomly selected tool
+        document.getElementById("toolOutput").innerText = "Random Automation Tool: " + tools[randomIndex];
+    }
+
+    /**
+     * Function to clear the tool output
+     */
+    function clearToolOutput() {
+        document.getElementById("toolOutput").innerText = "";
+    }
+</script>
+
+<button onclick="clearToolOutput()">Clear Tool Output</button> <!-- Added a button to clear the tool output -->
+
+</body>
+</html>
+``` 
+
+In this improved script, I have added a new automation tool ("Automated report generator") to the existing list of tools. Additionally, I have included a new function `clearToolOutput()` that allows users to clear the displayed tool output by clicking a "Clear Tool Output" button. This enhances user experience by providing the option to reset the displayed tool information.

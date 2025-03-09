@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,10 @@
     <button onclick="generateTool()">Generate Tool</button>
 
     <p id="toolOutput"></p>
+
+    <!-- New Feature: Include a button to add a custom tool -->
+    <input type="text" id="customToolInput" placeholder="Enter Custom Tool Name">
+    <button onclick="addCustomTool()">Add Custom Tool</button>
 
     <script>
         // Define an array of random automation tools
@@ -38,16 +43,25 @@
             // Display the random automation tool in the toolOutput paragraph
             document.getElementById("toolOutput").innerText = `Random Automation Tool: ${randomTool}`;
         }
+
+        /**
+         * Function to add a custom automation tool to the list
+         */
+        function addCustomTool() {
+            const customToolInput = document.getElementById("customToolInput").value;
+            
+            // Check if input is not empty
+            if (customToolInput.trim() !== "") {
+                automationTools.push(customToolInput);
+                document.getElementById("customToolInput").value = ""; // Clear input field
+                alert(`Custom Tool "${customToolInput}" added successfully!`);
+            } else {
+                alert("Please enter a valid tool name.");
+            }
+        }
     </script>
 </body>
 </html>
-```
+``` 
 
-Output:
-Random Automation Tools Generator
-
-Click the button below to generate a random useful automation tool:
-
-[Generate Tool]
-
-Output: Random Automation Tool: Automated Testing Framework
+In the improved script, a new feature has been added where users can input a custom automation tool name and add it to the list of random automation tools. The `addCustomTool()` function handles this functionality and alerts the user if the input is empty or successfully adds the custom tool.

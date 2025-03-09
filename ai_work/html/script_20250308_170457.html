@@ -1,0 +1,56 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Automation Tools Generator</title>
+</head>
+<body>
+    <h1>Random Automation Tools Generator</h1>
+
+    <p>Click the button below to generate a random useful automation tool:</p>
+    <button onclick="generateTool()">Generate Tool</button>
+    <p id="toolOutput"></p>
+
+    <script>
+        // Function to generate a random automation tool
+        function generateTool() {
+            const tools = [
+                "Automated Testing Tool",
+                "Data Scraping Tool",
+                "Batch File Processor",
+                "Automated Email Sender",
+                "Social Media Scheduler",
+                "Automated Report Generator"
+            ];
+
+            // Generate a random index to select a tool from the array
+            const randomIndex = Math.floor(Math.random() * tools.length);
+
+            // Display the randomly selected tool
+            const toolOutput = document.getElementById("toolOutput");
+            toolOutput.textContent = "Random Automation Tool: " + tools[randomIndex];
+        }
+
+        // Function to add a new tool to the list
+        function addNewTool() {
+            // Get user input for the new tool
+            const newTool = prompt("Enter the name of the new automation tool:");
+
+            // Add the new tool to the existing list
+            if (newTool) {
+                tools.push(newTool);
+                alert("New tool added successfully!");
+            } else {
+                alert("No tool added. Please enter a valid tool name.");
+            }
+        }
+    </script>
+    <button onclick="addNewTool()">Add New Tool</button>
+</body>
+</html>
+``` 
+
+In the improved script, a new function `addNewTool()` is added, allowing users to input a new automation tool and append it to the existing list. This new functionality enhances the user experience by giving them the option to contribute to the list of automation tools. Users can now click the "Add New Tool" button to input a new tool name, which will then be added to the list.

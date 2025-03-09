@@ -22,6 +22,29 @@ void generateAutomationTool() {
     printf("Random Automation Tool: %s\n", tools[randomIndex]);
 }
 
+// Function to check if a specific tool is generated
+void checkGeneratedTool(char *toolName) {
+    char *tools[] = {
+        "Automated data backup tool",
+        "Automated testing framework",
+        "Automated code deployment tool",
+        "Automated log analysis tool",
+        "Automated email sender",
+        "Automated report generator"
+    };
+
+    int numTools = sizeof(tools) / sizeof(tools[0]);
+
+    for (int i = 0; i < numTools; i++) {
+        if (strcmp(toolName, tools[i]) == 0) {
+            printf("The generated tool matches the specified tool: %s\n", toolName);
+            return;
+        }
+    }
+
+    printf("The generated tool does not match the specified tool: %s\n", toolName);
+}
+
 int main() {
     // Seed the random number generator
     srand(time(NULL));
@@ -30,6 +53,10 @@ int main() {
 
     generateAutomationTool();
 
+    // Check if a specific tool is generated
+    char specifiedTool[] = "Automated testing framework";
+    checkGeneratedTool(specifiedTool);
+
     return 0;
 }
 ```
@@ -37,5 +64,6 @@ int main() {
 **Output**
 ```
 Generating Random Automation Tool...
-Random Automation Tool: Automated testing framework
+Random Automation Tool: Automated code deployment tool
+The generated tool matches the specified tool: Automated testing framework
 ```

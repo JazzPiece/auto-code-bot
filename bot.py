@@ -117,10 +117,47 @@ for lang in languages:
     else:
         log(f"⚠️ AI did not return valid {ext} code. Skipping.")
 
+# ✅ Always modify existing files by adding new code
+for lang in languages:
+    lang_dir = AI_WORK_DIR / lang.lstrip(".")
+    for file in lang_dir.glob(f"*.{lang.lstrip('.')}"):
+        log(f"🔍 Enhancing file: {file}")
+
+        original_code = file.read_text(encoding="utf-8")
+
+        # Ensure AI always adds new content
+        modify_prompt = f"""
+        Below is an existing script. Add **new functionality** to improve it. 
+        You can:
+        - Add a new function.
+        - Add an extra feature.
+        - Extend an existing class.
+        - Ensure the new code is useful, with proper comments.
+
+        Do not just fix errors—expand functionality.
+
+        ```{lang}
+        {original_code}
+        ```
+        Provide the improved full script.
+        """
+        
+        modified_code = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": modify_prompt}],
+            temperature=0.9
+        ).choices[0].message.content
+
+        if modified_code and modified_code != original_code:
+            file.write_text(modified_code, encoding="utf-8")
+            log(f"✅ Updated file: {file}")
+        else:
+            log(f"⚠️ AI did not make significant changes: {file}")
+
 # ✅ Commit and push changes if modifications were made
 if repo.is_dirty():
     repo.git.add(A=True)
-    commit_message = f"🤖 AI: New {languages} scripts + Code improvements - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    commit_message = f"AI: Updated scripts with new features - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     repo.index.commit(commit_message)
     repo.remotes.origin.push()
     log(f"📌 Changes committed and pushed to GitHub: {commit_message}")
