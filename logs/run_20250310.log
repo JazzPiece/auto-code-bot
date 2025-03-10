@@ -1,0 +1,174 @@
+[2025-03-10 00:00:32] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:00:32] Generating tasks based on current analysis...
+[2025-03-10 00:00:36] Generated 3 meaningful scripts.
+[2025-03-10 00:00:36] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\linear_search.py
+[2025-03-10 00:00:36] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\linear_search.py:
+
+[2025-03-10 00:00:36] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\linear_search.py
+[2025-03-10 00:00:36] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\binary_search.py
+[2025-03-10 00:00:36] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\binary_search.py:
+
+[2025-03-10 00:00:36] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\binary_search.py
+[2025-03-10 00:00:36] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\interpolation_search.py
+[2025-03-10 00:00:36] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\interpolation_search.py:
+
+[2025-03-10 00:00:36] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\interpolation_search.py
+[2025-03-10 00:00:36] AI Code Bot run complete.
+[2025-03-10 00:00:45] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:00:45] Generating tasks based on current analysis...
+[2025-03-10 00:00:48] Generated 3 meaningful scripts.
+[2025-03-10 00:00:48] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_binary_search.py
+[2025-03-10 00:00:48] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_binary_search.py:
+
+[2025-03-10 00:00:48] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\improved_binary_search.py
+[2025-03-10 00:00:48] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\exponential_search.py
+[2025-03-10 00:00:48] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\exponential_search.py:
+
+[2025-03-10 00:00:48] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\exponential_search.py
+[2025-03-10 00:00:48] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\jump_search.py
+[2025-03-10 00:00:48] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\jump_search.py:
+
+[2025-03-10 00:00:48] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\jump_search.py
+[2025-03-10 00:00:48] AI Code Bot run complete.
+[2025-03-10 00:01:07] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:01:07] Generating tasks based on current analysis...
+[2025-03-10 00:01:11] Generated 3 meaningful scripts.
+[2025-03-10 00:01:11] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_binary_search.py
+[2025-03-10 00:01:12] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_binary_search.py:
+
+[2025-03-10 00:01:12] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\recursive_binary_search.py
+[2025-03-10 00:01:12] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\fibonacci_search.py
+[2025-03-10 00:01:12] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\fibonacci_search.py:
+
+[2025-03-10 00:01:12] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\fibonacci_search.py
+[2025-03-10 00:01:12] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\ternary_search.py
+[2025-03-10 00:01:12] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\ternary_search.py:
+
+[2025-03-10 00:01:12] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\ternary_search.py
+[2025-03-10 00:01:12] AI Code Bot run complete.
+[2025-03-10 00:01:15] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:01:15] Generating tasks based on current analysis...
+[2025-03-10 00:01:20] Generated 3 meaningful scripts.
+[2025-03-10 00:01:20] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_interpolation_search.py
+[2025-03-10 00:01:20] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_interpolation_search.py:
+
+[2025-03-10 00:01:20] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\improved_interpolation_search.py
+[2025-03-10 00:01:20] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\jump_search_optimized.py
+[2025-03-10 00:01:20] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\jump_search_optimized.py:
+
+[2025-03-10 00:01:20] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\jump_search_optimized.py
+[2025-03-10 00:01:20] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_ternary_search.py
+[2025-03-10 00:01:20] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_ternary_search.py:
+
+[2025-03-10 00:01:20] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\recursive_ternary_search.py
+[2025-03-10 00:01:20] AI Code Bot run complete.
+[2025-03-10 00:02:21] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:02:21] Generating tasks based on current analysis...
+[2025-03-10 00:02:43] Generated 3 meaningful scripts.
+[2025-03-10 00:02:43] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\search_algorithm_optimizations.py
+[2025-03-10 00:02:43] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\search_algorithm_optimizations.py:
+
+[2025-03-10 00:02:43] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\search_algorithm_optimizations.py
+[2025-03-10 00:02:43] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_search_optimizations.py
+[2025-03-10 00:02:43] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_search_optimizations.py:
+
+[2025-03-10 00:02:43] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\recursive_search_optimizations.py
+[2025-03-10 00:02:43] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\search_algorithm_helpers.py
+[2025-03-10 00:02:43] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\search_algorithm_helpers.py:
+
+[2025-03-10 00:02:43] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\search_algorithm_helpers.py
+[2025-03-10 00:02:43] AI Code Bot run complete.
+[2025-03-10 00:03:00] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:03:00] Generating tasks based on current analysis...
+[2025-03-10 00:03:19] Generated 3 meaningful scripts.
+[2025-03-10 00:03:19] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\merge_sort_for_search.py
+[2025-03-10 00:03:19] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\merge_sort_for_search.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\merge_sort_for_search.py", line 38, in <module>
+    from improved_binary_search import improved_binary_search
+ModuleNotFoundError: No module named 'improved_binary_search'
+
+[2025-03-10 00:03:19] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\enhanced_fibonacci_search.py
+[2025-03-10 00:03:19] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\enhanced_fibonacci_search.py:
+Target found at index: 8
+
+[2025-03-10 00:03:19] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\enhanced_fibonacci_search.py
+[2025-03-10 00:03:19] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_jump_search.py
+[2025-03-10 00:03:19] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\recursive_jump_search.py:
+Target found at index: 6
+
+[2025-03-10 00:03:19] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\src\recursive_jump_search.py
+[2025-03-10 00:03:19] AI Code Bot run complete.
+[2025-03-10 00:03:43] AI Code Bot started on project: search algorithm library
+[2025-03-10 00:03:43] Generating tasks based on current analysis...
+[2025-03-10 00:03:48] Generated 3 meaningful scripts.
+[2025-03-10 00:03:48] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_binary_search.py
+[2025-03-10 00:03:48] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\search_algorithm_library\tasks\improved_binary_search.py:
+
+[2025-03-10 00:04:44] AI Code Bot started on project: battleship game
+[2025-03-10 00:04:44] Generating tasks based on current analysis...
+[2025-03-10 00:04:48] Generated 3 meaningful scripts.
+[2025-03-10 00:04:48] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_setup.py
+[2025-03-10 00:04:49] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_setup.py:
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'S', 'O', 'O', 'O', 'O', 'O']
+['O', 'S', 'O', 'O', 'S', 'O', 'O', 'O', 'O', 'O']
+['O', 'S', 'O', 'O', 'S', 'O', 'O', 'O', 'O', 'O']
+['O', 'S', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'S', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+
+[2025-03-10 00:04:49] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\game_setup.py
+[2025-03-10 00:04:49] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_logic.py
+[2025-03-10 00:04:49] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_logic.py:
+
+[2025-03-10 00:04:49] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\game_logic.py
+[2025-03-10 00:04:49] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_play.py
+[2025-03-10 00:04:49] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_play.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_play.py", line 1, in <module>
+    from game_setup import create_board, place_ship
+ModuleNotFoundError: No module named 'game_setup'
+
+[2025-03-10 00:04:49] AI Code Bot run complete.
+[2025-03-10 00:04:57] AI Code Bot started on project: battleship game
+[2025-03-10 00:04:57] Generating tasks based on current analysis...
+[2025-03-10 00:05:00] Generated 1 meaningful scripts.
+[2025-03-10 00:05:00] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\add_ship.py
+[2025-03-10 00:05:00] Syntax error in C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\add_ship.py: invalid syntax (add_ship.py, line 22)
+[2025-03-10 00:05:00] AI Code Bot run complete.
+[2025-03-10 00:05:05] AI Code Bot started on project: battleship game
+[2025-03-10 00:05:05] Generating tasks based on current analysis...
+[2025-03-10 00:05:07] Generated 3 meaningful scripts.
+[2025-03-10 00:05:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\display_board.py
+[2025-03-10 00:05:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\display_board.py:
+
+[2025-03-10 00:05:08] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\display_board.py
+[2025-03-10 00:05:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\player_guess.py
+[2025-03-10 00:05:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\player_guess.py:
+
+[2025-03-10 00:05:08] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\player_guess.py
+[2025-03-10 00:05:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_logic.py
+[2025-03-10 00:05:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\game_logic.py:
+
+[2025-03-10 00:05:12] AI Code Bot started on project: battleship game
+[2025-03-10 00:05:12] Generating tasks based on current analysis...
+[2025-03-10 00:05:15] Generated 3 meaningful scripts.
+[2025-03-10 00:05:15] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\update_display_board.py
+[2025-03-10 00:05:15] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\update_display_board.py:
+
+[2025-03-10 00:05:15] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\update_display_board.py
+[2025-03-10 00:05:15] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\improved_place_ship.py
+[2025-03-10 00:05:15] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\improved_place_ship.py:
+
+[2025-03-10 00:05:15] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\src\improved_place_ship.py
+[2025-03-10 00:05:15] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\enhanced_player_guess.py
+[2025-03-10 00:05:15] Syntax error in C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\enhanced_player_guess.py: invalid syntax. Perhaps you forgot a comma? (enhanced_player_guess.py, line 4)
+[2025-03-10 00:05:15] AI Code Bot run complete.
+[2025-03-10 00:05:19] AI Code Bot started on project: battleship game
+[2025-03-10 00:05:19] Generating tasks based on current analysis...
+[2025-03-10 00:05:21] Generated 1 meaningful scripts.
+[2025-03-10 00:05:21] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\check_guess.py
+[2025-03-10 00:05:21] Syntax error in C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\check_guess.py: invalid syntax (check_guess.py, line 10)
+[2025-03-10 00:05:21] AI Code Bot run complete.

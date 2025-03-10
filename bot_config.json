@@ -1,5 +1,5 @@
 {
-	"project_focus": "historical mathrmatic equations",
+	"project_focus": "battleship game",
 	"languages": [ ".py" ],
 	"max_new_files_per_language": 1,
 	"max_modified_files_per_language": 1,
