@@ -172,3 +172,77 @@ ModuleNotFoundError: No module named 'game_setup'
 [2025-03-10 00:05:21] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\check_guess.py
 [2025-03-10 00:05:21] Syntax error in C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\battleship_game\tasks\check_guess.py: invalid syntax (check_guess.py, line 10)
 [2025-03-10 00:05:21] AI Code Bot run complete.
+[2025-03-10 00:08:17] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:08:17] Generating tasks based on current analysis...
+[2025-03-10 00:08:21] Generated 3 meaningful scripts.
+[2025-03-10 00:08:21] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\caesar_cipher.py
+[2025-03-10 00:08:21] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+
+[2025-03-10 00:08:21] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\caesar_cipher.py
+[2025-03-10 00:08:21] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\vigenere_cipher.py
+[2025-03-10 00:08:21] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\vigenere_cipher.py:
+Encrypted text: Rijvs, Ambpb!
+
+[2025-03-10 00:08:21] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\vigenere_cipher.py
+[2025-03-10 00:08:21] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\rsa_algorithm.py
+[2025-03-10 00:08:22] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\rsa_algorithm.py:
+Public key: (2, 3233)
+Private key: (3119, 3233)
+
+[2025-03-10 00:08:22] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\rsa_algorithm.py
+[2025-03-10 00:08:22] AI Code Bot run complete.
+[2025-03-10 00:08:31] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:08:31] Generating tasks based on current analysis...
+[2025-03-10 00:08:38] Generated 3 meaningful scripts.
+[2025-03-10 00:08:38] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py
+[2025-03-10 00:08:38] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+
+[2025-03-10 00:08:38] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\improved_caesar_cipher.py
+[2025-03-10 00:08:38] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_generate_keypair.py
+[2025-03-10 00:08:38] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_generate_keypair.py:
+Public key: (1933, 2209)
+Private key: (185, 2209)
+
+[2025-03-10 00:08:38] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\improved_generate_keypair.py
+[2025-03-10 00:08:38] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_vigenere_cipher.py
+[2025-03-10 00:08:38] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_vigenere_cipher.py:
+Encrypted text: Rijvs, Ambpb!
+Decrypted text: Hello, World!
+
+[2025-03-10 00:08:38] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\src\improved_vigenere_cipher.py
+[2025-03-10 00:08:38] AI Code Bot run complete.
+[2025-03-10 00:08:42] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:08:42] Generating tasks based on current analysis...
+[2025-03-10 00:08:50] Generated 3 meaningful scripts.
+[2025-03-10 00:08:50] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py
+[2025-03-10 00:08:50] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+
+[2025-03-10 00:08:53] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:08:53] Generating tasks based on current analysis...
+[2025-03-10 00:09:00] Generated 3 meaningful scripts.
+[2025-03-10 00:09:00] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py
+[2025-03-10 00:09:00] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+
+[2025-03-10 00:09:03] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:09:03] Generating tasks based on current analysis...
+[2025-03-10 00:09:09] Generated 3 meaningful scripts.
+[2025-03-10 00:09:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py
+[2025-03-10 00:09:09] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+
+[2025-03-10 00:09:13] AI Code Bot started on project: Cryptography methods
+[2025-03-10 00:09:13] Generating tasks based on current analysis...
+[2025-03-10 00:09:19] Generated 3 meaningful scripts.
+[2025-03-10 00:09:19] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py
+[2025-03-10 00:09:19] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Cryptography_methods\tasks\improved_caesar_cipher.py:
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+
