@@ -250,3 +250,73 @@ Decrypted text: Hello, World!
 [2025-03-10 21:18:40] Generating tasks based on current analysis...
 [2025-03-10 21:18:41] Generated 0 meaningful scripts.
 [2025-03-10 21:18:41] AI Code Bot run complete.
+[2025-03-10 21:18:54] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-10 21:18:54] Generating tasks based on current analysis...
+[2025-03-10 21:19:01] Generated 3 meaningful scripts.
+[2025-03-10 21:19:01] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py
+[2025-03-10 21:19:01] Syntax error in C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py: invalid syntax (data_preprocessing.py, line 10)
+[2025-03-10 21:19:01] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_training.py
+[2025-03-10 21:19:16] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_training.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_training.py", line 7, in <module>
+    data = pd.read_csv('preprocessed_data.csv')
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'preprocessed_data.csv'
+
+[2025-03-10 21:19:16] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py
+[2025-03-10 21:19:18] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py", line 6, in <module>
+    data = pd.read_csv('preprocessed_data.csv')
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\young\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'preprocessed_data.csv'
+
+[2025-03-10 21:19:18] AI Code Bot run complete.
+[2025-03-10 21:19:22] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-10 21:19:22] Generating tasks based on current analysis...
+[2025-03-10 21:19:24] Generated 3 meaningful scripts.
+[2025-03-10 21:19:24] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py
+[2025-03-10 21:19:26] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py:
+
+[2025-03-10 21:19:26] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\data_preprocessing.py
+[2025-03-10 21:19:26] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_training.py
+[2025-03-10 21:19:27] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_training.py:
+
+[2025-03-10 21:19:27] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\model_training.py
+[2025-03-10 21:19:27] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py
+[2025-03-10 21:19:29] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py:
+
+[2025-03-10 21:19:29] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\model_evaluation.py
+[2025-03-10 21:19:29] AI Code Bot run complete.
+[2025-03-10 21:19:42] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-10 21:19:42] Generating tasks based on current analysis...
+[2025-03-10 21:19:44] Generated 3 meaningful scripts.
+[2025-03-10 21:19:44] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\grid_search.py
+[2025-03-10 21:19:51] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\grid_search.py:
+
+[2025-03-10 21:19:51] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\grid_search.py
+[2025-03-10 21:19:51] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_selection.py
+[2025-03-10 21:19:53] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_selection.py:
+
+[2025-03-10 21:19:53] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\feature_selection.py
+[2025-03-10 21:19:53] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\cross_validation.py
+[2025-03-10 21:19:54] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\cross_validation.py:
+
+[2025-03-10 21:19:54] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\cross_validation.py
+[2025-03-10 21:19:54] AI Code Bot run complete.
