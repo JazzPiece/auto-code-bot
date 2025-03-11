@@ -320,3 +320,39 @@ FileNotFoundError: [Errno 2] No such file or directory: 'preprocessed_data.csv'
 
 [2025-03-10 21:19:54] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\cross_validation.py
 [2025-03-10 21:19:54] AI Code Bot run complete.
+[2025-03-10 21:22:52] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-10 21:22:52] Generating tasks based on current analysis...
+[2025-03-10 21:22:54] Generated 3 meaningful scripts.
+[2025-03-10 21:22:54] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering.py
+[2025-03-10 21:22:54] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering.py", line 1, in <module>
+    from sklearn.preprocessing import MinMaxScaler
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-10 21:22:54] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\hyperparameter_tuning.py
+[2025-03-10 21:22:54] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\hyperparameter_tuning.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\hyperparameter_tuning.py", line 1, in <module>
+    from sklearn.model_selection import RandomizedSearchCV
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-10 21:22:54] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py
+[2025-03-10 21:22:54] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py", line 1, in <module>
+    from sklearn.metrics import classification_report
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-10 21:22:54] AI Code Bot run complete.
+[2025-03-10 21:53:56] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-10 21:53:56] Generating tasks based on current analysis...
+[2025-03-10 21:53:59] Generated 3 meaningful scripts.
+[2025-03-10 21:53:59] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering.py
+[2025-03-10 21:54:07] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering.py:
+
+[2025-03-10 21:54:07] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\feature_engineering.py
+[2025-03-10 21:54:07] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\hyperparameter_tuning.py
+[2025-03-10 21:54:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\hyperparameter_tuning.py:
+
+[2025-03-10 21:54:08] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\hyperparameter_tuning.py
+[2025-03-10 21:54:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py
+[2025-03-10 21:54:09] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py:
+
