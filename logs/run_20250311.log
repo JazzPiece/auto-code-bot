@@ -1,0 +1,36 @@
+[2025-03-11 18:20:04] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-11 18:20:04] Generating tasks based on current analysis...
+[2025-03-11 18:20:09] Generated 4 meaningful scripts.
+[2025-03-11 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_selection.py
+[2025-03-11 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_selection.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_selection.py", line 1, in <module>
+    from sklearn.feature_selection import SelectFromModel
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-11 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\ensemble_tuning.py
+[2025-03-11 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\ensemble_tuning.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\ensemble_tuning.py", line 1, in <module>
+    from sklearn.ensemble import RandomForestClassifier
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-11 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py
+[2025-03-11 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\data_preprocessing.py", line 1, in <module>
+    from sklearn.preprocessing import StandardScaler
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-11 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py
+[2025-03-11 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\model_evaluation.py", line 1, in <module>
+    from sklearn.metrics import classification_report
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-11 18:20:09] AI Code Bot run complete.
+[2025-03-11 22:41:56] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-11 22:41:56] Generating tasks based on current analysis...
+[2025-03-11 22:42:00] Generated 1 meaningful scripts.
+[2025-03-11 22:42:00] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering_improvement.py
+[2025-03-11 22:42:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\feature_engineering_improvement.py:
+
+[2025-03-11 22:42:08] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\src\feature_engineering_improvement.py
+[2025-03-11 22:42:08] AI Code Bot run complete.

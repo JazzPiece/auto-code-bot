@@ -1,6 +1,7 @@
 {
 	"project_focus": "Useful Machine learning methods",
 	"languages": [ ".py" ],
+	"ai_tasks": 1,
 	"max_new_files_per_language": 1,
 	"max_modified_files_per_language": 1,
 	"openai_model": "gpt-3.5-turbo"
