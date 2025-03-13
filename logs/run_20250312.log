@@ -1,0 +1,90 @@
+[2025-03-12 18:20:04] AI Code Bot started on project: Useful Machine learning methods
+[2025-03-12 18:20:04] Generating tasks based on current analysis...
+[2025-03-12 18:20:09] Generated 4 meaningful scripts.
+[2025-03-12 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_cross_validate.py
+[2025-03-12 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_cross_validate.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_cross_validate.py", line 1, in <module>
+    from sklearn.model_selection import cross_val_score
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-12 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_feature_engineering.py
+[2025-03-12 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_feature_engineering.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_feature_engineering.py", line 1, in <module>
+    from sklearn.pipeline import Pipeline
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-12 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_grid_search.py
+[2025-03-12 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_grid_search.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_grid_search.py", line 1, in <module>
+    from sklearn.model_selection import GridSearchCV
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-12 18:20:09] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_hyperparameter_tuning.py
+[2025-03-12 18:20:09] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_hyperparameter_tuning.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Useful_Machine_learning_methods\tasks\improved_hyperparameter_tuning.py", line 1, in <module>
+    from sklearn.model_selection import RandomizedSearchCV
+ModuleNotFoundError: No module named 'sklearn'
+
+[2025-03-12 18:20:09] AI Code Bot run complete.
+[2025-03-12 18:51:10] AI Code Bot started on project: Chemistry in code collection
+[2025-03-12 18:51:10] Generating tasks based on current analysis...
+[2025-03-12 18:51:15] Generated 1 meaningful scripts.
+[2025-03-12 18:51:15] Stored task: C:\Users\young\Source\Repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\chemical_equation_balancer.py
+[2025-03-12 18:51:15] Syntax error in C:\Users\young\Source\Repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\chemical_equation_balancer.py: invalid syntax (chemical_equation_balancer.py, line 1)
+[2025-03-12 18:51:15] AI Code Bot run complete.
+[2025-03-12 18:51:44] AI Code Bot started on project: Chemistry in code collection
+[2025-03-12 18:51:44] Generating tasks based on current analysis...
+[2025-03-12 18:51:47] Generated 3 meaningful scripts.
+[2025-03-12 18:51:47] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\periodic_table.py
+[2025-03-12 18:51:50] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\periodic_table.py:
+  symbol       name  atomic_number  atomic_mass
+0      H   Hydrogen              1       1.0080
+1     He     Helium              2       4.0026
+2     Li    Lithium              3       6.9400
+3     Be  Beryllium              4       9.0122
+4      B      Boron              5      10.8100
+5      C     Carbon              6      12.0110
+6      N   Nitrogen              7      14.0070
+7      O     Oxygen              8      15.9990
+8      F   Fluorine              9      18.9980
+9     Ne       Neon             10      20.1800
+
+[2025-03-12 18:51:50] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\src\periodic_table.py
+[2025-03-12 18:51:50] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties.py
+[2025-03-12 18:51:50] Execution failed for C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties.py: Traceback (most recent call last):
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties.py", line 7, in <module>
+    element_properties = get_element_properties(element_symbol)
+  File "C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties.py", line 3, in get_element_properties
+    properties = periodic_table[periodic_table['symbol'] == symbol]
+NameError: name 'periodic_table' is not defined
+
+[2025-03-12 18:51:50] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\compound_formula.py
+[2025-03-12 18:51:50] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\compound_formula.py:
+H2 O
+
+[2025-03-12 18:51:50] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\src\compound_formula.py
+[2025-03-12 18:51:50] AI Code Bot run complete.
+[2025-03-12 18:52:06] AI Code Bot started on project: Chemistry in code collection
+[2025-03-12 18:52:06] Generating tasks based on current analysis...
+[2025-03-12 18:52:08] Generated 2 meaningful scripts.
+[2025-03-12 18:52:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\chemical_formula_cleaner.py
+[2025-03-12 18:52:08] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\chemical_formula_cleaner.py:
+H2 O
+
+[2025-03-12 18:52:08] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\src\chemical_formula_cleaner.py
+[2025-03-12 18:52:08] Stored task: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties_extractor.py
+[2025-03-12 18:52:09] Execution success C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\tasks\element_properties_extractor.py:
+  symbol       name  atomic_number  atomic_mass
+0      H   Hydrogen              1       1.0080
+1     He     Helium              2       4.0026
+2     Li    Lithium              3       6.9400
+3     Be  Beryllium              4       9.0122
+4      B      Boron              5      10.8100
+5      C     Carbon              6      12.0110
+6      N   Nitrogen              7      14.0070
+7      O     Oxygen              8      15.9990
+8      F   Fluorine              9      18.9980
+9     Ne       Neon             10      20.1800
+
+[2025-03-12 18:52:09] Moved executed script to src: C:\Users\young\source\repos\JazzPiece\auto-code-bot\ai_work\Chemistry_in_code_collection\src\element_properties_extractor.py
+[2025-03-12 18:52:09] AI Code Bot run complete.
