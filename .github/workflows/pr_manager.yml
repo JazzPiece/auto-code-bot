@@ -1,0 +1,38 @@
+name: AI PR Manager
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pr_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: AI Code Review
+        run: python .github/scripts/code_review.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Request Changes If AI Finds Issues
+        if: contains(github.event.pull_request.body, 'Needs Review')
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              reviewers: ["your-github-username"]
+            });
+
+      - name: Auto Merge If AI Approves
+        if: success()
+        uses: "pascalgn/automerge-action@v0.15.4"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABELS: "approved"
+          MERGE_METHOD: "squash"
