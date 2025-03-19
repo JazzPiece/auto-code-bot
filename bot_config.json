@@ -1,6 +1,6 @@
 {
 	"project_focus": "the functions of Physics",
-	"languages": [ ".py" ],
+	"languages": [ ".java" ],
 	"ai_tasks": 1,
 	"max_new_files_per_language": 1,
 	"max_modified_files_per_language": 1,
