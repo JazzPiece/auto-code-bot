@@ -66,7 +66,7 @@ Existing code:
 Identify meaningful improvements and clearly define exactly {ai_tasks} executable Python scripts to enhance the project.
 
 For each task, provide exactly:
-filename: descriptive_name.py
+filename: descriptive_name.java
 code:
 <python script>
 
