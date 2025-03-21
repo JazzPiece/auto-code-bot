@@ -1,24 +1,24 @@
-# Import necessary libraries
+# This script will perform a simulation of a quantum system using the QuTiP library
+
 import numpy as np
-from qiskit import QuantumCircuit, Aer, execute
+import matplotlib.pyplot as plt
+from qutip import basis, qeye, destroy, mesolve
 
-# Create a 2-qubit quantum circuit
-qc = QuantumCircuit(2)
+# Parameters
+N = 5  # number of quantum states
+a = destroy(N)
+H = a.dag() * a  # Hamiltonian
 
-# Apply Hadamard gate on qubit 0
-qc.h(0)
+# Initial state
+psi0 = basis(N, 0)
 
-# Apply CNOT gate with control qubit 0 and target qubit 1
-qc.cx(0, 1)
+# Time evolution
+tlist = np.linspace(0, 10, 100)
+result = mesolve(H, psi0, tlist, [], [a.dag() * a])
 
-# Measure qubits
-qc.measure_all()
-
-# Simulate the quantum circuit
-simulator = Aer.get_backend('qasm_simulator')
-job = execute(qc, simulator, shots=1000)
-result = job.result()
-
-# Get the counts of the measurement outcomes
-counts = result.get_counts(qc)
-print(counts)
+# Plot results
+plt.plot(tlist, result.expect[0])
+plt.xlabel('Time')
+plt.ylabel('Occupation probability')
+plt.title('Quantum System Dynamics')
+plt.show()
