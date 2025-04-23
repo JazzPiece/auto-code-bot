@@ -1,6 +1,6 @@
 {
-	"project_focus": "java hashmap helper methods",
-	"languages": [ ".java" ],
+	"project_focus": "c hashmap helper methods",
+	"languages": [ ".c" ],
 	"ai_tasks": 2,
 	"max_new_files_per_language": 1,
 	"max_modified_files_per_language": 1,
